@@ -3,7 +3,6 @@
 # http://www.pythonchallenge.com/pc/def/linkedlist.php
 
 import urllib.request
-import urllib.parse
 import re
 
 def main():
