@@ -13,4 +13,4 @@ with open('garbage.txt', 'r') as garbage:
 
 print(''.join(letters))
 
-# equality
+# Keyword: equality

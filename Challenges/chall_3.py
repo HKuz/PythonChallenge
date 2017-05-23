@@ -19,9 +19,9 @@ def main():
         littles = re.findall(pattern, text)
 
     print(''.join(littles))
-    # linkedlist
     return 0
 
+# Keyword: linkedlist
 
 if __name__ == '__main__':
     main()
