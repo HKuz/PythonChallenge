@@ -77,10 +77,9 @@ def main():
 
     photo.save('good_final.jpg')
 
-
     return 0
 
-# Keyword: cow, bull
+# Keywords: cow, bull
 
 
 if __name__ == '__main__':
