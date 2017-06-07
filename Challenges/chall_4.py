@@ -17,7 +17,6 @@ def main():
     # nothing = '66831' # Cheat code
     pattern = re.compile(r'next nothing is (\d+)')
 
-    # TODO: go to url, copy body text, find number, use in next url
     for i in range(400):
         with urllib.request.urlopen(base_url + nothing) as page:
             data = page.read().decode('utf-8')
