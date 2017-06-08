@@ -14,6 +14,9 @@ def main():
     server_url = 'http://www.pythonchallenge.com/pc/phonebook.php'
 
     with xmlrpc.client.ServerProxy(server_url) as server_proxy:
+        print(server_proxy.system.listMethods()) # get a 'phone'
+        print(server_proxy.system.methodHelp('phone'))
+        print(server_proxy.system.methodSignature('phone'))
         try:
             print(server_proxy.phone('Bert')) # 555-ITALY
         except Exception as e:
