@@ -5,9 +5,9 @@
 
 def main():
     '''
-    Hint: evil1.jpg -> evil2.jpg not .jpg - _.gfx -> evil3.jpg No more evils
+    Hint: Dealing evils.
+    evil1.jpg -> evil2.jpg not .jpg - _.gfx -> evil3.jpg No more evils
     evil2.gfx has 5 jpgs in it
-    Can't install gfx module on MBP :(
     '''
 
     with open('./evils/evil2.gfx', 'rb') as evil:
