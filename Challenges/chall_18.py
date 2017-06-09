@@ -41,7 +41,7 @@ def main():
 
     return 0
 
-# Keywords: butterfly, ../hex/bin.html
+# Keywords: ../hex/bin.html, butter, fly
 
 
 if __name__ == '__main__':
