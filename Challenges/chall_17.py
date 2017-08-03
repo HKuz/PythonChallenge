@@ -1,4 +1,4 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/usr/local/bin/python3
 # Python challenge - 17
 # http://www.pythonchallenge.com/pc/return/romance.html
 # http://www.pythonchallenge.com/pc/return/cookies.html -> yummy! chocolate chips.
