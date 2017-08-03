@@ -1,4 +1,4 @@
-#!/Applications/anaconda/envs/pyEffy/bin
+#!/usr/local/bin/python3
 # Python challenge - 16
 # www.pythonchallenge.com/pc/return/mozart.html
 
