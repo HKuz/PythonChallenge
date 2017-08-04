@@ -1,9 +1,10 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 5
 # http://www.pythonchallenge.com/pc/def/peak.html
 
 import urllib.request
 import pickle
+
 
 def main():
     '''

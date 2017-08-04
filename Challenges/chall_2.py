@@ -1,4 +1,4 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 2
 # http://www.pythonchallenge.com/pc/def/ocr.html
 

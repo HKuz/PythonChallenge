@@ -1,9 +1,10 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 4
 # http://www.pythonchallenge.com/pc/def/linkedlist.php
 
 import urllib.request
 import re
+
 
 def main():
     '''

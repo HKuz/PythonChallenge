@@ -1,11 +1,13 @@
-#!/Applications/anaconda/envs/pyEffy/bin
+#!/urs/local/bin/python3
 # Python challenge - 7
 # http://www.pythonchallenge.com/pc/def/hockey.html
 # http://www.pythonchallenge.com/pc/def/oxygen.html
 
 # Uses Anaconda environment with Pillow for image processing
 
-import PIL, PIL.Image
+import PIL
+import PIL.Image
+
 
 def main():
     '''
@@ -23,8 +25,10 @@ def main():
     #     print(pixel_access[i, height/2])
 
     # Create list comprehension of gray values
-    first = [pixel_access[0, height/2][0]]
-    rest = [pixel_access[5 + 7*i, height/2][0] for i in range((width-5)//7)]
+    first = [pixel_access[0, height / 2][0]]
+    rest = [pixel_access[
+        5 + 7 * i, height / 2][0] for i in range((width - 5) // 7)
+    ]
     grays = first + rest
     message = ''.join([chr(item) for item in grays])
     print(message)
@@ -32,7 +36,7 @@ def main():
     # Get second message
     start_index = message.find('[')
     end_index = message.find(']')
-    new_set = message[start_index+1: end_index].split(',')
+    new_set = message[start_index + 1: end_index].split(',')
     final_message = ''.join([chr(int(item)) for item in new_set])
     print(final_message)
 

@@ -1,9 +1,10 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 15
 # http://www.pythonchallenge.com/pc/return/cat.html
 # http://www.pythonchallenge.com/pc/return/uzi.html
 
 import calendar
+
 
 def main():
     '''
@@ -19,7 +20,7 @@ def main():
             # print(y)
             valid_years.append(y)
 
-    print(valid_years) # [1176, 1356, 1576, 1756, 1976], Not youngest so 1756
+    print(valid_years)  # [1176, 1356, 1576, 1756, 1976], Not youngest so 1756
     # Mozart born on January 27, 1756
 
     return 0

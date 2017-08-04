@@ -1,4 +1,4 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 12
 # http://www.pythonchallenge.com/pc/return/evil.html
 
@@ -14,7 +14,8 @@ def main():
         evil = evil.read()
 
         for i in range(5):
-            open('./evils/evil_image'+str(i)+'.jpg', 'wb').write(evil[i::5])
+            open(
+                './evils/evil_image' + str(i) + '.jpg', 'wb').write(evil[i::5])
 
     return 0
 

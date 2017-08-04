@@ -1,10 +1,11 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 19
 # http://www.pythonchallenge.com/pc/hex/bin.html
 
 import base64
 import wave
 import audioop
+
 
 def main():
     '''
@@ -30,7 +31,8 @@ def main():
 
     -->
 
-    sorry.html (www.pythonchallenge.com/pc/hex/.html) -> -"what are you apologizing for?"
+    sorry.html (www.pythonchallenge.com/pc/hex/.html) ->
+        -"what are you apologizing for?"
     '''
     # Decode base64 encoding, write to a wav file?
     with open('./indian.txt', 'r') as rawtext:
@@ -44,17 +46,21 @@ def main():
     indian = wave.open('./indian.wav', 'wb')
     bigindian = wave.open('./bigindian.wav', 'wb')
 
-    nchannels, sampwidth, framerate, nframes, comptype, compname = temp_wav.getparams()
+    nchannels, sampwidth, framerate, nframes, comptype, compname = \
+        temp_wav.getparams()
     print('Number audio channels (1 mono, 2 stereo): {}\nSample width in bits: {}\nSample freq (frame rate): {}\nNumber audio frames: {}\nCompression type (NONE is only supported type): {}\nHuman-readable compression type: {}'.format(nchannels, sampwidth, framerate, nframes, comptype, compname))
 
     frames = temp_wav.readframes(nframes)
     frames_swap = audioop.byteswap(frames, sampwidth)
 
-    indian.setparams((nchannels, sampwidth, framerate, nframes, comptype, compname))
-    bigindian.setparams((nchannels, sampwidth, framerate, nframes, comptype, compname))
+    indian.setparams(
+        (nchannels, sampwidth, framerate, nframes, comptype, compname))
+    bigindian.setparams(
+        (nchannels, sampwidth, framerate, nframes, comptype, compname))
 
-    indian.writeframes(frames) # little endian -> 'sorry'
-    bigindian.writeframes(frames_swap) # big endian -> 'you are an idiot, ah ah ah ah ah ah ah'
+    indian.writeframes(frames)  # little endian -> 'sorry'
+    bigindian.writeframes(frames_swap)
+    # big endian -> 'you are an idiot, ah ah ah ah ah ah ah'
 
     temp_wav.close()
     indian.close()

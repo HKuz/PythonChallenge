@@ -1,4 +1,4 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 10
 # http://www.pythonchallenge.com/pc/return/bull.html
 # http://www.pythonchallenge.com/pc/return/sequence.txt
@@ -10,8 +10,7 @@ def main():
     a = [1, 11, 21, 1211, 111221,
     <area shape="poly" coords="146, ..., 399" href="sequence.txt">
     '''
-
-    a_orig = ['1', '11', '21', '1211', '111221']
+    # a_orig = ['1', '11', '21', '1211', '111221']
     a = ['1']
 
     for i in range(30):

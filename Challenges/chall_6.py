@@ -1,10 +1,11 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 6
 # http://www.pythonchallenge.com/pc/def/channel.html
 # http://www.pythonchallenge.com/pc/def/channel.zip
 
 import re
 import zipfile
+
 
 def main():
     '''

@@ -1,4 +1,4 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 1
 # http://www.pythonchallenge.com/pc/def/map.html
 
@@ -17,8 +17,7 @@ def main():
     print(plain_text)
 
     print(caesar_cipher('/map', 2))
-    #change /map.html to /ocr.html
-
+    # change /map.html to /ocr.html
 
 
 def caesar_cipher(cipher_text, n):
@@ -48,6 +47,7 @@ def caesar_cipher(cipher_text, n):
     return plain_text
 
 # Keyword: ocr
+
 
 if __name__ == '__main__':
     main()

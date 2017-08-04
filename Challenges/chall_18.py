@@ -1,4 +1,4 @@
-#!/Applications/anaconda/envs/Python3/bin
+#!/urs/local/bin/python3
 # Python challenge - 18
 # http://www.pythonchallenge.com/pc/return/balloons.html
 # http://www.pythonchallenge.com/pc/return/brightness.html
@@ -6,9 +6,11 @@
 
 import difflib
 
+
 def main():
     '''
-    Hint: can you tell the difference? (side by side pics of swans, one's darker than the other)
+    Hint: can you tell the difference? (side by side pics of swans, one's
+        darker than the other)
     brightness -> maybe consider deltas.gz
     '''
     a, b = [], []
@@ -27,7 +29,8 @@ def main():
 
     for line in diff:
         # Convert non-+/- diff part to byte array
-        byte_line = bytes([int(n, 16) for n in line[2:].strip().split(" ") if n])
+        byte_line = bytes([
+            int(n, 16) for n in line[2:].strip().split(" ") if n])
         if line[0] == '+':
             d_plus.write(byte_line)
         elif line[0] == '-':
