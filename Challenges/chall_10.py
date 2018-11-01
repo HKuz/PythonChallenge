@@ -1,5 +1,5 @@
-#!/urs/local/bin/python3
-# Python challenge - 10
+#!/usr/local/bin/python3
+# Python Challenge - 10
 # http://www.pythonchallenge.com/pc/return/bull.html
 # http://www.pythonchallenge.com/pc/return/sequence.txt
 

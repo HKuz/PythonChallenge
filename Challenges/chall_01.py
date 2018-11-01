@@ -1,5 +1,5 @@
 #!/usr/local/bin/python3
-# Python challenge - 1
+# Python Challenge - 1
 # http://www.pythonchallenge.com/pc/def/map.html
 # Keyword: ocr
 

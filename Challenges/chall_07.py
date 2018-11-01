@@ -1,5 +1,5 @@
-#!/urs/local/bin/python3
-# Python challenge - 7
+#!/usr/local/bin/python3
+# Python Challenge - 7
 # http://www.pythonchallenge.com/pc/def/hockey.html
 # http://www.pythonchallenge.com/pc/def/oxygen.html
 

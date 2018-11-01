@@ -1,5 +1,5 @@
 #!/usr/local/bin/python3
-# Python challenge - 3
+# Python Challenge - 3
 # http://www.pythonchallenge.com/pc/def/equality.html
 # Keyword: linkedlist
 

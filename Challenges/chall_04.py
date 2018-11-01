@@ -1,5 +1,5 @@
 #!/usr/local/bin/python3
-# Python challenge - 4
+# Python Challenge - 4
 # http://www.pythonchallenge.com/pc/def/linkedlist.html
 # http://www.pythonchallenge.com/pc/def/linkedlist.php
 # Keyword: peak

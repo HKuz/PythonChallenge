@@ -1,5 +1,5 @@
 #!/usr/local/bin/python3
-# Python challenge - 0
+# Python Challenge - 0
 # http://www.pythonchallenge.com/pc/def/0.html
 # Keyword: 274877906944
 

@@ -1,5 +1,5 @@
-#!/urs/local/bin/python3
-# Python challenge - 8
+#!/usr/local/bin/python3
+# Python Challenge - 8
 # http://www.pythonchallenge.com/pc/def/integrity.html
 # http://www.pythonchallenge.com/pc/return/good.html
 

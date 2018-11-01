@@ -1,5 +1,5 @@
-#!/urs/local/bin/python3
-# Python challenge - 6
+#!/usr/local/bin/python3
+# Python Challenge - 6
 # http://www.pythonchallenge.com/pc/def/channel.html
 # http://www.pythonchallenge.com/pc/def/channel.zip
 
