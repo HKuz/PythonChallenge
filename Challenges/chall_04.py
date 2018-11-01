@@ -1,6 +1,8 @@
-#!/urs/local/bin/python3
+#!/usr/local/bin/python3
 # Python challenge - 4
+# http://www.pythonchallenge.com/pc/def/linkedlist.html
 # http://www.pythonchallenge.com/pc/def/linkedlist.php
+# Keyword: peak
 
 import urllib.request
 import re
@@ -8,6 +10,10 @@ import re
 
 def main():
     '''
+    html page shows: linkedlist.php
+    php page comment: urllib may help. DON'T TRY ALL NOTHINGS, since it will
+        never end. 400 times is more than enough.
+    Photo link: linkedlist.php?nothing=12345
     http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345
     44827
     45439
@@ -15,7 +21,7 @@ def main():
     '''
     base_url = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing='
     nothing = '12345'
-    # nothing = '66831' # Cheat code
+    # nothing = '66831'  # Cheat code
     pattern = re.compile(r'next nothing is (\d+)')
 
     for i in range(400):
@@ -33,8 +39,6 @@ def main():
 
     print('Last nothing found was: {}'.format(nothing))
     return 0
-
-# Keyword: peak
 
 
 if __name__ == '__main__':
