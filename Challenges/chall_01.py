@@ -10,6 +10,7 @@ def main():
     K -> M
     O -> Q
     E -> G
+    Everybody thinks twice before solving this.
     '''
 
     cipher_text = ('g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcp'
