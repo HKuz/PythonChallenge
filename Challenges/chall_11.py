@@ -1,5 +1,5 @@
-#!/urs/local/bin/python3
-# Python challenge - 11
+#!/usr/local/bin/python3
+# Python Challenge - 11
 # http://www.pythonchallenge.com/pc/return/5808.html
 
 # Uses Anaconda environment with Pillow for image processing
@@ -25,8 +25,10 @@ def main():
 
     # Split image into two by even and odd pixels
     for row in range(height):
-        even_pixels[row] = pixel_data[row, ::2, :] if row % 2 == 0 else pixel_data[row, 1::2, :]
-        odd_pixels[row] = pixel_data[row, ::2, :] if row % 2 == 1 else pixel_data[row, 1::2, :]
+        even_pixels[row] = (pixel_data[row, ::2, :] if row % 2 == 0
+                            else pixel_data[row, 1::2, :])
+        odd_pixels[row] = (pixel_data[row, ::2, :] if row % 2 == 1
+                           else pixel_data[row, 1::2, :])
 
     # Draw new images and save
     even_photo = Image.fromarray(even_pixels, "RGB")
