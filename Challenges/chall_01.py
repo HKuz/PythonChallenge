@@ -1,4 +1,4 @@
-#!/urs/local/bin/python3
+#!/usr/local/bin/python3
 # Python challenge - 1
 # http://www.pythonchallenge.com/pc/def/map.html
 
