@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3
 # Python challenge - 1
 # http://www.pythonchallenge.com/pc/def/map.html
+# Keyword: ocr
 
 
 def main():
@@ -11,13 +12,18 @@ def main():
     E -> G
     '''
 
-    cipher_text = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj."
+    cipher_text = ('g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcp'
+                   'q ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr\'q '
+                   'ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq '
+                   'pcamkkclbcb. lmu ynnjw ml rfc spj.')
 
     plain_text = caesar_cipher(cipher_text, 2)
+    print("PLAIN TEXT:")
     print(plain_text)
 
+    # Apply cipher to /map.html (get /ocr.html)
+    print('NEW ADDRESS PATH')
     print(caesar_cipher('/map', 2))
-    # change /map.html to /ocr.html
 
 
 def caesar_cipher(cipher_text, n):
@@ -45,8 +51,6 @@ def caesar_cipher(cipher_text, n):
         plain_text += codex.get(c, c)
 
     return plain_text
-
-# Keyword: ocr
 
 
 if __name__ == '__main__':
