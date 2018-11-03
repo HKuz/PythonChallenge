@@ -2,6 +2,7 @@
 # Python Challenge - 8
 # http://www.pythonchallenge.com/pc/def/integrity.html
 # http://www.pythonchallenge.com/pc/return/good.html
+# Keywords: huge; file
 
 import bz2
 
@@ -37,8 +38,6 @@ def main():
     print(pw)
 
     return 0
-
-# Keywords: huge; file
 
 
 if __name__ == '__main__':
