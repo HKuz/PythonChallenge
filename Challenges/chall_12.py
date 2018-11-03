@@ -1,6 +1,7 @@
-#!/urs/local/bin/python3
-# Python challenge - 12
+#!/usr/local/bin/python3
+# Python Challenge - 12
 # http://www.pythonchallenge.com/pc/return/evil.html
+# Keyword: disproportional
 
 
 def main():
@@ -10,16 +11,14 @@ def main():
     evil2.gfx has 5 jpgs in it
     '''
 
-    with open('./evils/evil2.gfx', 'rb') as evil:
+    with open('./evils_chall_12/evil2.gfx', 'rb') as evil:
         evil = evil.read()
 
         for i in range(5):
-            open(
-                './evils/evil_image' + str(i) + '.jpg', 'wb').write(evil[i::5])
+            (open('./evils/evil_image' + str(i) + '.jpg', 'wb')
+                .write(evil[i::5]))
 
     return 0
-
-# Keyword: disproportional
 
 
 if __name__ == '__main__':
