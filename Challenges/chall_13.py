@@ -1,7 +1,9 @@
-#!/urs/local/bin/python3
-# Python challenge - 13
+#!/usr/local/bin/python3
+# Python Challenge - 13
 # http://www.pythonchallenge.com/pc/return/disproportional.html
 # http://www.pythonchallenge.com/pc/phonebook.php
+# Username: huge; Password: file
+# Keyword: italy
 
 import xmlrpc.client
 
@@ -24,8 +26,6 @@ def main():
             print('Error', e)
 
     return 0
-
-# Keyword: italy
 
 
 if __name__ == '__main__':

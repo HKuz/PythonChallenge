@@ -2,6 +2,7 @@
 # Python Challenge - 10
 # http://www.pythonchallenge.com/pc/return/bull.html
 # http://www.pythonchallenge.com/pc/return/sequence.txt
+# Username: huge; Password: file
 # Keyword: 5808
 
 
