@@ -1,6 +1,8 @@
-#!/urs/local/bin/python3
-# Python challenge - 14
+#!/usr/local/bin/python3
+# Python Challenge - 14
 # http://www.pythonchallenge.com/pc/return/italy.html
+# Username: huge; Password: file
+# Keyword: cat
 
 # Uses Anaconda environment with Pillow for image processing
 
@@ -65,8 +67,6 @@ def main():
     spiral_photo.save('spiral.png')
 
     return 0
-
-# Keyword: cat
 
 
 if __name__ == '__main__':
