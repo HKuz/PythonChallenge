@@ -1,7 +1,9 @@
-#!/urs/local/bin/python3
-# Python challenge - 15
+#!/usr/local/bin/python3
+# Python Challenge - 15
 # http://www.pythonchallenge.com/pc/return/cat.html
 # http://www.pythonchallenge.com/pc/return/uzi.html
+# Username: huge; Password: file
+# Keyword: mozart
 
 import calendar
 
@@ -24,8 +26,6 @@ def main():
     # Mozart born on January 27, 1756
 
     return 0
-
-# Keyword: mozart
 
 
 if __name__ == '__main__':
