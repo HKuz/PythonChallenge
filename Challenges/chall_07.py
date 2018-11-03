@@ -2,6 +2,7 @@
 # Python Challenge - 7
 # http://www.pythonchallenge.com/pc/def/hockey.html
 # http://www.pythonchallenge.com/pc/def/oxygen.html
+# Keyword: integrity
 
 # Uses Anaconda environment with Pillow for image processing
 
@@ -41,8 +42,6 @@ def main():
     print(final_message)
 
     return 0
-
-# Keyword: integrity
 
 
 if __name__ == '__main__':
