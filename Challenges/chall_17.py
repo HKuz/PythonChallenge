@@ -1,8 +1,10 @@
 #!/usr/local/bin/python3
-# Python challenge - 17
+# Python Challenge - 17
 # http://www.pythonchallenge.com/pc/return/romance.html
 # http://www.pythonchallenge.com/pc/return/cookies.html
 # -> yummy! chocolate chips.
+# Username: huge; Password: file
+# Keyword: balloons
 
 import urllib.request
 import urllib.parse
@@ -77,8 +79,6 @@ def main():
     print(response)
 
     return 0
-
-# Keyword: balloons
 
 
 if __name__ == '__main__':
