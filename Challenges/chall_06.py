@@ -2,6 +2,7 @@
 # Python Challenge - 6
 # http://www.pythonchallenge.com/pc/def/channel.html
 # http://www.pythonchallenge.com/pc/def/channel.zip
+# Keyword: hockey
 
 import re
 import zipfile
@@ -40,8 +41,6 @@ def main():
     print(''.join(comments))
 
     return 0
-
-# Keyword: hockey
 
 
 if __name__ == '__main__':
