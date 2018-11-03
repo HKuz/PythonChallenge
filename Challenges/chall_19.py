@@ -1,6 +1,8 @@
-#!/urs/local/bin/python3
-# Python challenge - 19
+#!/usr/local/bin/python3
+# Python Challenge - 19
 # http://www.pythonchallenge.com/pc/hex/bin.html
+# Username: butter; Password: fly
+# Keyword: sorry, idiot
 
 import base64
 import wave
@@ -67,8 +69,6 @@ def main():
     bigindian.close()
 
     return 0
-
-# Keyword: sorry, idiot
 
 
 if __name__ == '__main__':
