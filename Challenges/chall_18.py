@@ -1,8 +1,10 @@
-#!/urs/local/bin/python3
-# Python challenge - 18
+#!/usr/local/bin/python3
+# Python Challenge - 18
 # http://www.pythonchallenge.com/pc/return/balloons.html
 # http://www.pythonchallenge.com/pc/return/brightness.html
 # http://www.pythonchallenge.com/pc/return/deltas.gz
+# Username: huge; Password: file
+# Keywords: ../hex/bin.html, butter, fly
 
 import difflib
 
@@ -43,8 +45,6 @@ def main():
     d_same.close()
 
     return 0
-
-# Keywords: ../hex/bin.html, butter, fly
 
 
 if __name__ == '__main__':
