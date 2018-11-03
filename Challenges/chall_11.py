@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3
 # Python Challenge - 11
 # http://www.pythonchallenge.com/pc/return/5808.html
+# Keyword: evil
 
 # Uses Anaconda environment with Pillow for image processing
 
@@ -37,8 +38,6 @@ def main():
     odd_photo.save('odd.jpg')
 
     return 0
-
-# Keyword: evil
 
 
 if __name__ == '__main__':
