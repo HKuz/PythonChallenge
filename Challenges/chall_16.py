@@ -1,6 +1,8 @@
 #!/usr/local/bin/python3
-# Python challenge - 16
+# Python Challenge - 16
 # www.pythonchallenge.com/pc/return/mozart.html
+# Username: huge; Password: file
+# Keyword: romance
 
 # Uses Anaconda environment with Pillow for image processing
 
@@ -40,8 +42,6 @@ def main():
     new_img.save('mozart_16_solution.gif')
 
     return 0
-
-# Keyword: romance
 
 
 if __name__ == '__main__':
