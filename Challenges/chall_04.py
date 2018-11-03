@@ -21,13 +21,13 @@ def main():
     '''
     base_url = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing='
     nothing = '12345'
-    # nothing = '66831'  # Cheat code
+    # nothing = '66831'  # Cheat code for last nothing
     pattern = re.compile(r'next nothing is (\d+)')
 
-    for i in range(400):
+    while True:
         with urllib.request.urlopen(base_url + nothing) as page:
             data = page.read().decode('utf-8')
-            print(data)
+            # print(data)
             match = re.search(pattern, data)
             if match:
                 nothing = match.group(1)
