@@ -2,6 +2,7 @@
 # Python Challenge - 10
 # http://www.pythonchallenge.com/pc/return/bull.html
 # http://www.pythonchallenge.com/pc/return/sequence.txt
+# Keyword: 5808
 
 
 def main():
@@ -45,8 +46,6 @@ def main():
     print('Length of a[30]: {}'.format(len(a[30])))
 
     return 0
-
-# Keyword: 5808
 
 
 if __name__ == '__main__':
