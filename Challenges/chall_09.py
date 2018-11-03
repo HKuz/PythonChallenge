@@ -1,6 +1,8 @@
 #!/usr/local/bin/python3
 # Python Challenge - 9
 # http://www.pythonchallenge.com/pc/return/good.html
+# Username: huge; Password: file
+# Keywords: cow, bull
 
 # Uses Anaconda environment with Pillow for image processing
 
@@ -118,8 +120,6 @@ def main():
     photo.save('good_final.jpg')
 
     return 0
-
-# Keywords: cow,  bull
 
 
 if __name__ == '__main__':
