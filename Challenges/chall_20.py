@@ -1,7 +1,8 @@
-#!/urs/local/bin/python3
-# Python challenge - 20
+#!/usr/local/bin/python3
+# Python Challenge - 20
 # http://www.pythonchallenge.com/pc/hex/idiot2.html
-
+# Username: butter; Password: fly
+# Keyword:
 
 import urllib.request
 
@@ -21,8 +22,6 @@ def main():
         print(page.into())
 
     return 0
-
-# Keyword:
 
 
 if __name__ == '__main__':
