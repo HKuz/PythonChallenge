@@ -14,7 +14,7 @@ def main():
     '''
 
     alphabet = string.ascii_letters
-    with open('garbage.txt', 'r') as garbage:
+    with open('./Resources/garbage.txt', 'r') as garbage:
         letters = [c for line in garbage.readlines() for c in line
                    if c in alphabet]
         # Long form of nested loops:
