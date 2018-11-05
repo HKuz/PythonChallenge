@@ -2,7 +2,7 @@
 # Python Challenge - 6
 # http://www.pythonchallenge.com/pc/def/channel.html
 # http://www.pythonchallenge.com/pc/def/channel.zip
-# Keyword: hockey
+# Keyword: hockey -> oxygen
 
 import re
 import zipfile
@@ -24,7 +24,7 @@ def main():
     nothing = '90052'
     file_ext = '.txt'
     file_pattern = re.compile(r'Next nothing is (\d+)')
-    zf = zipfile.ZipFile('channel.zip')
+    zf = zipfile.ZipFile('./zip_chall_06/channel.zip')
     comments = []
 
     while True:
