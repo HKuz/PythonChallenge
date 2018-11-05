@@ -13,7 +13,7 @@ def main():
     its sides.
     Page source text saved in bodyguard.txt
     '''
-    with open('bodyguard.txt', 'r') as bodyguard:
+    with open('./Resources/bodyguard.txt', 'r') as bodyguard:
         pattern = re.compile(r'[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]')
         littles = ''
         text = bodyguard.read()
