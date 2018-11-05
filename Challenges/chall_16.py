@@ -1,10 +1,14 @@
-#!/usr/local/bin/python3
+#!/Applications/anaconda/envs/imgPIL/bin
 # Python Challenge - 16
 # www.pythonchallenge.com/pc/return/mozart.html
 # Username: huge; Password: file
 # Keyword: romance
 
-# Uses Anaconda environment with Pillow for image processing
+'''
+Uses Anaconda environment with Pillow for image processing
+    - Python 3.7, numpy, and Pillow (PIL)
+    - Run `source activate imgPIL`, `python chall_16.py`
+'''
 
 from PIL import Image
 import numpy as np
@@ -17,7 +21,7 @@ def main():
         seemingly one/row
     Need to align the pink bars
     '''
-    photo_path = './mozart.gif'
+    photo_path = './mozart-static_chall_16/mozart.gif'
     photo = Image.open(photo_path)
     width, height = photo.size  # 640, 480
     mode = photo.mode  # P
@@ -39,7 +43,7 @@ def main():
 
     # Create new photo from re-aligned rows
     new_img = Image.fromarray(shifted_array, mode)
-    new_img.save('mozart_16_solution.gif')
+    new_img.save('./mozart-static_chall_16/mozart_16_solution.gif')
 
     return 0
 
