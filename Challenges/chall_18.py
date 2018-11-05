@@ -17,17 +17,17 @@ def main():
     '''
     a, b = [], []
 
-    with open('./Delta_Chall_18/deltas', 'rb') as deltas:
+    with open('./delta_chall_18/deltas', 'rb') as deltas:
         for line in deltas.readlines():
             a.append(line[:53].decode() + '\n')
             b.append(line[56:].decode())
 
     diff = difflib.ndiff(a, b)
-    # print(type(diff)) # generator
+    # print(type(diff))  # generator
 
-    d_minus = open('./Delta_Chall_18/d_minus.png', 'wb')
-    d_plus = open('./Delta_Chall_18/d_plus.png', 'wb')
-    d_same = open('./Delta_Chall_18/d_same.png', 'wb')
+    d_minus = open('./delta_chall_18/d_minus.png', 'wb')
+    d_plus = open('./delta_chall_18/d_plus.png', 'wb')
+    d_same = open('./delta_chall_18/d_same.png', 'wb')
 
     for line in diff:
         # Convert non-+/- diff part to byte array
