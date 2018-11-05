@@ -1,10 +1,14 @@
-#!/usr/local/bin/python3
+#!/Applications/anaconda/envs/imgPIL/bin
 # Python Challenge - 9
 # http://www.pythonchallenge.com/pc/return/good.html
 # Username: huge; Password: file
 # Keywords: cow, bull
 
-# Uses Anaconda environment with Pillow for image processing
+'''
+Uses Anaconda environment with Pillow for image processing
+    - Python 3.7, numpy, and Pillow (PIL)
+    - Run `source activate imgPIL`, `python chall_09.py`
+'''
 
 import PIL
 import PIL.Image
@@ -110,14 +114,14 @@ def main():
         114, 155, 115, 158, 121, 157, 128, 156, 134, 157, 136, 156, 136
     )
 
-    photo_path = './good.jpg'
+    photo_path = './connect-dots_chall_09/good.jpg'
     photo = PIL.Image.open(photo_path)
     draw = PIL.ImageDraw.Draw(photo)
     draw.line(first, fill=128)
     draw.line(second, fill=128)
     del draw
 
-    photo.save('good_final.jpg')
+    photo.save('./connect-dots_chall_09/good_final.jpg')
 
     return 0
 

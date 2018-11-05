@@ -19,7 +19,7 @@ def main():
     Hint: photo with a stripe of grayscale boxes
     http://www.pythonchallenge.com/pc/def/oxygen.png
     '''
-    photo = PIL.Image.open('oxygen.png')
+    photo = PIL.Image.open('./Resources/oxygen.png')
     pixel_access = photo.load()
     # print(photo.size) # (629, 95)
     width = photo.size[0]
