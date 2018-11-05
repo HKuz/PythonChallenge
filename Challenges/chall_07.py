@@ -1,10 +1,14 @@
-#!/usr/local/bin/python3
+#!/Applications/anaconda/envs/imgPIL/bin
 # Python Challenge - 7
 # http://www.pythonchallenge.com/pc/def/hockey.html
 # http://www.pythonchallenge.com/pc/def/oxygen.html
 # Keyword: integrity
 
-# Uses Anaconda environment with Pillow for image processing
+'''
+Uses Anaconda environment with Pillow for image processing
+    - Python 3.7, numpy, and Pillow (PIL)
+    - Run `source activate imgPIL`, `python chall_07.py`
+'''
 
 import PIL
 import PIL.Image
