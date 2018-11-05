@@ -37,20 +37,24 @@ def main():
         -"what are you apologizing for?"
     '''
     # Decode base64 encoding, write to a wav file?
-    with open('./indian.txt', 'r') as rawtext:
+    with open('./indian_chall_19/indian.txt', 'r') as rawtext:
         data = rawtext.read()
         decoded_bytes = base64.b64decode(data)
-        temp = open('./temp.wav', 'wb')
+        temp = open('./indian_chall_19/temp.wav', 'wb')
         temp.write(decoded_bytes)
         temp.close()
 
-    temp_wav = wave.open('./temp.wav', 'rb')
-    indian = wave.open('./indian.wav', 'wb')
-    bigindian = wave.open('./bigindian.wav', 'wb')
+    temp_wav = wave.open('./indian_chall_19/temp.wav', 'rb')
+    indian = wave.open('./indian_chall_19/indian.wav', 'wb')
+    bigindian = wave.open('./indian_chall_19/bigindian.wav', 'wb')
 
     nchannels, sampwidth, framerate, nframes, comptype, compname = \
         temp_wav.getparams()
-    print('Number audio channels (1 mono, 2 stereo): {}\nSample width in bits: {}\nSample freq (frame rate): {}\nNumber audio frames: {}\nCompression type (NONE is only supported type): {}\nHuman-readable compression type: {}'.format(nchannels, sampwidth, framerate, nframes, comptype, compname))
+    print('Number audio channels (1 mono, 2 stereo): {}\nSample width in bits:'
+          ' {}\nSample freq (frame rate): {}\nNumber audio frames: {}\n'
+          'Compression type (NONE is only supported type): {}\nHuman-readable '
+          'compression type: {}'.format(nchannels, sampwidth, framerate,
+                                        nframes, comptype, compname))
 
     frames = temp_wav.readframes(nframes)
     frames_swap = audioop.byteswap(frames, sampwidth)
