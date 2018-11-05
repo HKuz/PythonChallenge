@@ -1,10 +1,14 @@
-#!/usr/local/bin/python3
+#!/Applications/anaconda/envs/imgPIL/bin
 # Python Challenge - 14
 # http://www.pythonchallenge.com/pc/return/italy.html
 # Username: huge; Password: file
 # Keyword: cat
 
-# Uses Anaconda environment with Pillow for image processing
+'''
+Uses Anaconda environment with Pillow for image processing
+    - Python 3.7, numpy, and Pillow (PIL)
+    - Run `source activate imgPIL`, `python chall_14.py`
+'''
 
 from PIL import Image
 import numpy as np
@@ -16,7 +20,7 @@ def main():
     http://www.pythonchallenge.com/pc/return/wire.png
 
     '''
-    photo_path = './wire.png'
+    photo_path = './spiral_chall_14/wire.png'
     photo = Image.open(photo_path)
     wire_pixels = np.asarray(photo)
     print(wire_pixels.shape)  # (1, 10000, 3)
@@ -64,7 +68,7 @@ def main():
 
     # Create image from array
     spiral_photo = Image.fromarray(pic_array, "RGB")
-    spiral_photo.save('spiral.png')
+    spiral_photo.save('./spiral_chall_14/spiral.png')
 
     return 0
 
