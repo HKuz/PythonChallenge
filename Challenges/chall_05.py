@@ -23,7 +23,7 @@ def main():
             # print(len(row))
             # print(sum([n for s, n in row]))
             # Rows of lists, add to 95 with characters to print
-            print(''.join([r[0] * r[1] for r in row]))
+            print(''.join([s * n for s, n in row]))
 
     return 0
 
