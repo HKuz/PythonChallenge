@@ -33,7 +33,9 @@ def main():
         match = re.search(file_pattern, data)
         if match:
             nothing = match.group(1)
+            # com = zf.getinfo(filename).comment.decode('utf-8')
             comments.append(zf.getinfo(filename).comment.decode('utf-8'))
+            # print('Comment: {}'.format(com))
         else:
             break
 
