@@ -37,9 +37,9 @@ def main():
                            else pixel_data[row, 1::2, :])
 
     # Draw new images and save
-    even_photo = Image.fromarray(even_pixels, "RGB")
+    even_photo = Image.fromarray(even_pixels, 'RGB')
     even_photo.save('./odd-even_chall_11/even.jpg')
-    odd_photo = Image.fromarray(odd_pixels, "RGB")
+    odd_photo = Image.fromarray(odd_pixels, 'RGB')
     odd_photo.save('./odd-even_chall_11/odd.jpg')
 
     return 0
