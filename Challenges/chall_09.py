@@ -10,9 +10,8 @@ Uses Anaconda environment with Pillow for image processing
     - Run `source activate imgPIL`, `python chall_09.py`
 '''
 
-import PIL
-import PIL.Image
-import PIL.ImageDraw
+# import PIL
+from PIL import Image, ImageDraw
 
 
 def main():
@@ -115,13 +114,16 @@ def main():
     )
 
     photo_path = './connect-dots_chall_09/good.jpg'
-    photo = PIL.Image.open(photo_path)
-    draw = PIL.ImageDraw.Draw(photo)
-    draw.line(first, fill=128)
-    draw.line(second, fill=128)
+    pic = Image.open(photo_path)
+    size = pic.size
+
+    img = Image.new('RGB', size)
+    draw = ImageDraw.Draw(img)
+    draw.line(first)
+    draw.line(second)
     del draw
 
-    photo.save('./connect-dots_chall_09/good_final.jpg')
+    img.save('./connect-dots_chall_09/final.jpg')
 
     return 0
 
