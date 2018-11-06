@@ -10,9 +10,11 @@ import re
 
 def main():
     '''
+    What are you looking at?
     Hint: len(a[30]) = ?
     a = [1, 11, 21, 1211, 111221,
     <area shape="poly" coords="146, ..., 399" href="sequence.txt">
+    See and say sequence
     '''
     # a_orig = ['1', '11', '21', '1211', '111221']
 
