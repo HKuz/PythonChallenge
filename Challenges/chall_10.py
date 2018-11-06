@@ -5,6 +5,8 @@
 # Username: huge; Password: file
 # Keyword: 5808
 
+import re
+
 
 def main():
     '''
@@ -13,8 +15,10 @@ def main():
     <area shape="poly" coords="146, ..., 399" href="sequence.txt">
     '''
     # a_orig = ['1', '11', '21', '1211', '111221']
-    a = ['1']
 
+    # Naive solution
+    '''
+    a = ['1']
     for i in range(30):
         curr_string = a[i]
         new_string = ''
@@ -45,7 +49,17 @@ def main():
     # print(a)
     # print(a[30])
     print('Length of a[30]: {}'.format(len(a[30])))
+    '''
 
+    # Regular Expression solution
+    a = '1'
+    pattern = re.compile(r'(\d)(\1*)')
+
+    for i in range(30):
+        a = ''.join([str(len(times) + 1) + letter for letter, times
+                     in re.findall(pattern, a)])
+
+    print('Length of a[30]: {}'.format(len(a)))
     return 0
 
 
