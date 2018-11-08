@@ -19,6 +19,8 @@ def main():
     Picture of chocolate chip cookies
     Embedded picture of saw thing from Nothings challenge (4)
     /cookies.html -> yummy! chocolate chips.
+    Challenge 4:http://www.pythonchallenge.com/pc/def/linkedlist.html
+        Inspect page -> Network -> Select page -> Cookies
     Cookies for page: you should have followed busynothing...
     '''
     base_url = ('http://www.pythonchallenge.com/pc/def/linkedlist'
