@@ -67,7 +67,7 @@ def main():
         direction = (direction + 1) % 4
 
     # Create image from array
-    spiral_photo = Image.fromarray(pic_array, "RGB")
+    spiral_photo = Image.fromarray(pic_array, 'RGB')
     spiral_photo.save('./spiral_chall_14/spiral.png')
 
     return 0
