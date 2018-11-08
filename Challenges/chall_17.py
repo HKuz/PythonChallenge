@@ -2,7 +2,6 @@
 # Python Challenge - 17
 # http://www.pythonchallenge.com/pc/return/romance.html
 # http://www.pythonchallenge.com/pc/return/cookies.html
-# -> yummy! chocolate chips.
 # Username: huge; Password: file
 # Keyword: balloons
 
@@ -22,7 +21,8 @@ def main():
     /cookies.html -> yummy! chocolate chips.
     Cookies for page: you should have followed busynothing...
     '''
-    base_url = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?busynothing='
+    base_url = ('http://www.pythonchallenge.com/pc/def/linkedlist'
+                '.php?busynothing=')
     busynothing = '12345'
     # busynothing = '83051' # Cheat code
     pattern = re.compile(r'next busynothing is (\d+)')
@@ -57,8 +57,10 @@ def main():
     # result = urllib.parse.unquote_plus(raw_result, 'latin1').encode('latin1')
     decoded_result = bz2.decompress(result)
     print(decoded_result.decode('ascii'))
-    # is it the 26th already? call his father and inform him that
-    # "the flowers are on their way". he'll understand.
+    '''
+    is it the 26th already? call his father and inform him that
+    "the flowers are on their way". he'll understand.
+    '''
 
     server_url = 'http://www.pythonchallenge.com/pc/phonebook.php'
 
