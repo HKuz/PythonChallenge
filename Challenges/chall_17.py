@@ -77,7 +77,7 @@ def main():
     message = 'the flowers are on their way'
     quoted = urllib.parse.quote_plus(message)
     request = urllib.request.Request(
-        violin_url, headers={"Cookie": "info=" + quoted}
+        violin_url, headers={'Cookie': 'info=' + quoted}
     )
     response = urllib.request.urlopen(request).read().decode()
     print(response)
