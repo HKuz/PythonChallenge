@@ -11,8 +11,7 @@ Uses Anaconda environment with Pillow for image processing
     - Run `source activate imgPIL`, `python chall_22.py`
 '''
 
-from PIL import Image
-import numpy as np
+from PIL import Image, ImageDraw
 
 
 def main():
@@ -23,10 +22,12 @@ def main():
         square, download has 133 pages in preview (frames?)
     '''
     img_path = './joystick_chall_22/white.gif'
-    white = Image.open(img_path)
-    hist = white.histogram()
 
-    print(len(hist))
+    with Image.open(img_path) as gif:
+        hist = gif.histogram()  # 1 pixel in hist bin 8 (0-255)
+        print(hist.index(1))
+        data = list(gif.getdata())
+        print(data.index(8))  # 20100
 
     return 0
 
