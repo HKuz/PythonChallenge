@@ -6,7 +6,6 @@
 
 import urllib.request
 import base64
-import urllib.parse
 
 
 def main():
@@ -31,8 +30,19 @@ def main():
     request = urllib.request.Request(url, headers=headers)
     # print(request.headers)
     response = urllib.request.urlopen(request)
-    print(response.headers)  # Content-Range: bytes 0-30202/2123456789
-    request.add_header()
+    # print(response.getcode())  # 200
+    print(response.headers)
+    '''
+    Content-Type: image/jpeg
+    Content-Range: bytes 0-30202/2123456789
+    Connection: close
+    Transfer-Encoding: chunked
+    Date: Fri, 09 Nov 2018 16:44:12 GMT
+    Server: lighttpd/1.4.35
+    '''
+    request.headers['Range'] = 'bytes=30203-'
+    response = urllib.request.urlopen(request)
+    print(response.read().decode())
 
     return 0
 
