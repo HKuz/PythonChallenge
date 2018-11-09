@@ -53,37 +53,26 @@ def main():
             # Break for HTTP Error 416: Requested Range Not Satisfiable
             break
 
-    # print(''.join(messages))
-    # print('Content Ranges:')
-    # print('\n'.join(content_ranges))
     '''
     Why don't you respect my privacy?
     we can go on in this way for really long time.
     stop this!
     invader! invader!
     ok, invader. you are inside now.
-
-    Content Ranges:
-    0-30202
-    30203-30236
-    30237-30283
-    30284-30294
-    30295-30312
-    30313-30346
     '''
 
     # Try to request bytes after size
     request.headers['Range'] = 'bytes={}-'.format(int(total_size) + 1)
-    match = regex.search(response.headers['Content-Range'])
-    endbytes = match.group(2)
-    content_ranges.append(match.group(1))
-    request.headers['Range'] = 'bytes={}-'.format(int(endbytes) + 1)
     response = urllib.request.urlopen(request)
+    match = regex.search(response.headers['Content-Range'])
+    content_ranges.append(match.group(1))
     message = response.read().decode()
-    print(message)
-    print('Message reversed: {}'.format(message[::-1]))
-    print(response.headers)
     # the password is your new nickname in reverse: redavni
+    messages.append(message[::-1])
+
+    # print(''.join(messages))
+    # print('Content Ranges:')
+    # print('\n'.join(content_ranges))
 
     '''
     HEADER:
@@ -94,6 +83,43 @@ def main():
     Transfer-Encoding: chunked
     Date: Fri, 09 Nov 2018 18:26:03 GMT
     Server: lighttpd/1.4.35
+
+    All Content Ranges:
+    0-30202
+    30203-30236
+    30237-30283
+    30284-30294
+    30295-30312
+    30313-30346
+    2123456744-2123456788
+    '''
+
+    # Search the bytes in reverse
+    range_val = int(content_ranges[-1].split('-')[0])  # 2123456744
+    request.headers['Range'] = 'bytes={}-'.format(int(range_val) - 1)
+    response = urllib.request.urlopen(request)
+    match = regex.search(response.headers['Content-Range'])
+    content_ranges.append(match.group(1))
+    message = response.read().decode()
+    messages.append(message)
+    # and it is hiding at 1152983631
+
+    # Get what's hiding
+    request.headers['Range'] = 'bytes=1152983631-'
+    response = urllib.request.urlopen(request)
+    match = regex.search(response.headers['Content-Range'])
+    content_ranges.append(match.group(1))
+    with open('./invader_chall_20/message.zip', 'wb') as file:
+        file.write(response.read())
+
+    '''
+    Yes! This is really level 21 in here.
+    And yes, After you solve it, you'll be in level 22!
+
+    Now for the level:
+
+    * We used to play this game when we were kids
+    * When I had no idea what to do, I looked backwards.
     '''
 
     return 0
