@@ -33,6 +33,7 @@ def main():
         # Convert non-+/- diff part to byte array
         byte_line = bytes([
             int(n, 16) for n in line[2:].strip().split(" ") if n])
+
         if line[0] == '+':
             d_plus.write(byte_line)
         elif line[0] == '-':
