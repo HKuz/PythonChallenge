@@ -26,30 +26,34 @@ def main():
     with Image.open(img_path) as gif:
         # print('Format: {}, Mode: {}'.format(gif.format, gif.mode))  # GIF, P
         indices = []
-        for i in range(10):
+        while True:
             hist = gif.histogram()  # 1 pixel in hist bin 8 (0-255)
-            color = hist.index(1)
-            print('Color bin: {}'.format(color))  # bin 8 out of 256
+            color = hist.index(1)  # bin 8 out of 256
+            # print('Color bin: {}'.format(color))
             data = list(gif.getdata())
-            pixel_index = data.index(color)  # 20100
+            pixel_index = data.index(color)  # 20100 in 1st frame
             indices.append(pixel_index)
-            print('Pixel index: {}'.format(pixel_index))
+            # print('Pixel index: {}'.format(pixel_index))
 
             try:
+                # Note: gif.n_frames gives total frames (133)
                 gif.seek(gif.tell() + 1)
-                print('Frame: {}'.format(gif.tell() + 1))
+                # print('Frame: {}'.format(gif.tell() + 1))
             except EOFError:
-                pass  # end of sequence
+                break  # end of sequence
 
-        print(indices)
+        # Convert flattened indices to get position on 200x200 square
+        coords = list(map(lambda x: divmod(x, 200), indices))
+        print(coords)
 
-        new = Image.new(gif.mode, gif.size)
-        draw = ImageDraw.Draw(new)
-        draw.line(first)
-        draw.line(second)
-        del draw
+        # new = Image.new('RGB', gif.size)
+        # for coord in coords:
+        #     new.putpixel(coord, (255, 255, 255))
+        # draw = ImageDraw.Draw(new)
+        # draw.line(coords)
+        # del draw
 
-        new.save('./joystick_chall_22/final.jpg')
+        # new.save('./joystick_chall_22/final.jpg')
 
     return 0
 
