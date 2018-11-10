@@ -17,4 +17,7 @@
 - Challenge 18: difflib
 - Challenge 19: base64, wave, audioop
 - Challenge 20: urllib.request
-
+- Challenge 21: zlib, bz2
+- Challenge 22: PIL.Image, PIL.ImageDraw
+- Challenge 23: this
+- Challenge 24:
