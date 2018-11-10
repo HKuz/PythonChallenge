@@ -15,16 +15,17 @@ def main():
         tell him that you are sorry. Please show good manners although
         it has nothing to do with this level.
     it can't find it. this is an undocumented module.
+    'va gur snpr bs jung?'
     '''
     # From level 17
-    violin_url = 'http://www.pythonchallenge.com/pc/stuff/violin.php'
-    message = 'sorry'
-    quoted = urllib.parse.quote_plus(message)
-    request = urllib.request.Request(
-        violin_url, headers={'Cookie': 'info=' + quoted}
-    )
-    response = urllib.request.urlopen(request).read().decode()
-    print(response)
+    # violin_url = 'http://www.pythonchallenge.com/pc/stuff/violin.php'
+    # message = 'Es tut uns leid'
+    # quoted = urllib.parse.quote_plus(message)
+    # request = urllib.request.Request(
+    #     violin_url, headers={'Cookie': 'info=' + quoted}
+    # )
+    # response = urllib.request.urlopen(request).read().decode()
+    # print(response)  # didn't work
 
     return 0
 
