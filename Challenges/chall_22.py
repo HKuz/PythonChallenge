@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/Applications/anaconda/envs/imgPIL/bin
 # Python Challenge - 22
 # http://www.pythonchallenge.com/pc/hex/copper.html
 # http://www.pythonchallenge.com/pc/hex/white.gif
