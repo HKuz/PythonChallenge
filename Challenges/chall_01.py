@@ -27,10 +27,11 @@ def main():
 
     # Challenge 23
     # chall_23 = 'va gur snpr bs jung?'
-    for i in range(26):
-        plain_23 = caesar_cipher(cipher_text, i)
-        print('i: {}'.format(i))
-        print('PLAIN TEXT: {}'.format(plain_23))
+    # print(caesar_cipher(chall_23, 13))
+    # for i in range(26):
+    #     plain_23 = caesar_cipher(chall_23, i)
+    #     print('i: {}'.format(i))
+    #     print('PLAIN TEXT: {}'.format(plain_23))
     # Rot13: in the face of what?
 
 
