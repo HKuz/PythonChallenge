@@ -3,7 +3,7 @@
 # http://www.pythonchallenge.com/pc/hex/copper.html
 # http://www.pythonchallenge.com/pc/hex/white.gif
 # Username: butter; Password: fly
-# Keyword:
+# Keyword: bonus
 
 '''
 Uses Anaconda environment with Pillow for image processing
@@ -44,16 +44,23 @@ def main():
 
         # Convert flattened indices to get position on 200x200 square
         coords = list(map(lambda x: divmod(x, 200), indices))
-        print(coords)
+        # print(sum([1 for r, c in coords if r == 100 == c]))  # 5
 
-        # new = Image.new('RGB', gif.size)
-        # for coord in coords:
-        #     new.putpixel(coord, (255, 255, 255))
-        # draw = ImageDraw.Draw(new)
-        # draw.line(coords)
-        # del draw
+        new = Image.new('RGB', (500, 200))
+        draw = ImageDraw.Draw(new)
+        x, y = (0, 100)
+        for coord in coords:
+            dx = coord[1] - 100
+            dy = coord[0] - 100
+            if coord == (100, 100):
+                # New letter, move right and reset height
+                x += 50
+                y = 100
+            x += dx
+            y += dy
+            draw.point((x, y))
 
-        # new.save('./joystick_chall_22/final.jpg')
+        new.save('./joystick_chall_22/final.jpg')
 
     return 0
 
