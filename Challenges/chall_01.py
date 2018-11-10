@@ -19,12 +19,19 @@ def main():
                    'pcamkkclbcb. lmu ynnjw ml rfc spj.')
 
     plain_text = caesar_cipher(cipher_text, 2)
-    print("PLAIN TEXT:")
-    print(plain_text)
+    print('PLAIN TEXT: {}'.format(plain_text))
 
     # Apply cipher to /map.html (get /ocr.html)
     print('NEW ADDRESS PATH')
     print(caesar_cipher('/map', 2))
+
+    # Challenge 23
+    # chall_23 = 'va gur snpr bs jung?'
+    for i in range(26):
+        plain_23 = caesar_cipher(cipher_text, i)
+        print('i: {}'.format(i))
+        print('PLAIN TEXT: {}'.format(plain_23))
+    # Rot13: in the face of what?
 
 
 def caesar_cipher(cipher_text, n):
