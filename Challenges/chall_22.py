@@ -24,10 +24,32 @@ def main():
     img_path = './joystick_chall_22/white.gif'
 
     with Image.open(img_path) as gif:
-        hist = gif.histogram()  # 1 pixel in hist bin 8 (0-255)
-        print(hist.index(1))
-        data = list(gif.getdata())
-        print(data.index(8))  # 20100
+        # print('Format: {}, Mode: {}'.format(gif.format, gif.mode))  # GIF, P
+        indices = []
+        for i in range(10):
+            hist = gif.histogram()  # 1 pixel in hist bin 8 (0-255)
+            color = hist.index(1)
+            print('Color bin: {}'.format(color))  # bin 8 out of 256
+            data = list(gif.getdata())
+            pixel_index = data.index(color)  # 20100
+            indices.append(pixel_index)
+            print('Pixel index: {}'.format(pixel_index))
+
+            try:
+                gif.seek(gif.tell() + 1)
+                print('Frame: {}'.format(gif.tell() + 1))
+            except EOFError:
+                pass  # end of sequence
+
+        print(indices)
+
+        new = Image.new(gif.mode, gif.size)
+        draw = ImageDraw.Draw(new)
+        draw.line(first)
+        draw.line(second)
+        del draw
+
+        new.save('./joystick_chall_22/final.jpg')
 
     return 0
 
