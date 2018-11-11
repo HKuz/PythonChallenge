@@ -15,7 +15,8 @@ from PIL import Image
 
 def main():
     '''
-    From top to bottom, picture is a huge maze
+    From top to bottom; (picture is a huge maze with different colored
+        pixels in the maze walls)
     '''
     img_path = './maze_chall_24/maze.png'
     with Image.open(img_path) as maze:
