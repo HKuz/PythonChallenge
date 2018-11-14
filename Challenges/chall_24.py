@@ -33,31 +33,32 @@ def main():
                 print('Exit: {}'.format(end))
 
         # Breadth-first shortest path
+        shortest = {}
         directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]  # (dw, dh)
-        data = []
         path_queue = [start]
-        while len(path_queue) != 0:
-            # Get and remove oldest element in pathQueue
-            tmp_path = path_queue.pop(0)
-            last_pixel = tmp_path[-1]
+        print('Path queue (start): {}'.format(path_queue))
+        while path_queue:
+            # Get and remove oldest pixel in queue
+            last_pixel = path_queue.pop(0)
+            # print('Last pixel: {}'.format(last_pixel))
             if last_pixel == end:
-                shortest = tmp_path
                 break
-            for dw, dh in directions:
-                next_pixel = (last_pixel[0] + dw, last_pixel[1] + dh)
+            for d in directions:
+                next_pixel = (last_pixel[0] + d[0], last_pixel[1] + d[1])
                 if not ((0 <= next_pixel[0] < w) and (0 <= next_pixel[1] < h)):
                     # Off grid, check next direction
                     continue
-                elif ((next_pixel not in tmp_path) and
+                elif ((next_pixel not in shortest) and
                       maze.getpixel(next_pixel) != (255, 255, 255, 255)):
                     # Pixel isn't already in the path and it's not white
-                    new_path = tmp_path + [next_pixel]
-                    path_queue.append(new_path)
+                    shortest[last_pixel] = next_pixel
+                    path_queue.append(next_pixel)
             # for nextNode in graph.childrenOf(lastNode):
             #     if nextNode not in tmpPath:
             #         newPath = tmpPath + [nextNode]
             #         pathQueue.append(newPath)
 
+        data = []
         for pixel in shortest:
             data.append(maze.getpixel(pixel)[0])
 
