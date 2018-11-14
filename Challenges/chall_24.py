@@ -33,7 +33,35 @@ def main():
                 print('Exit: {}'.format(end))
 
         # Breadth-first shortest path
-        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]  # (dw, dh)
+        data = []
+        path_queue = [start]
+        while len(path_queue) != 0:
+            # Get and remove oldest element in pathQueue
+            tmp_path = path_queue.pop(0)
+            last_pixel = tmp_path[-1]
+            if last_pixel == end:
+                shortest = tmp_path
+                break
+            for dw, dh in directions:
+                next_pixel = (last_pixel[0] + dw, last_pixel[1] + dh)
+                if not ((0 <= next_pixel[0] < w) and (0 <= next_pixel[1] < h)):
+                    # Off grid, check next direction
+                    continue
+                elif ((next_pixel not in tmp_path) and
+                      maze.getpixel(next_pixel) != (255, 255, 255, 255)):
+                    # Pixel isn't already in the path and it's not white
+                    new_path = tmp_path + [next_pixel]
+                    path_queue.append(new_path)
+            # for nextNode in graph.childrenOf(lastNode):
+            #     if nextNode not in tmpPath:
+            #         newPath = tmpPath + [nextNode]
+            #         pathQueue.append(newPath)
+
+        for pixel in shortest:
+            data.append(maze.getpixel(pixel)[0])
+
+        print(data)
 
     return 0
 
