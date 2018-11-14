@@ -32,7 +32,8 @@ def main():
                 end = (i, h - 1)
                 print('Exit: {}'.format(end))
 
-        # Shortest path
+        # Breadth-first shortest path
+        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
     return 0
 
