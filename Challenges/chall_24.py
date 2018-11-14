@@ -16,7 +16,7 @@ from PIL import Image
 def main():
     '''
     From top to bottom; (picture is a huge maze with different colored
-        pixels in the maze walls - black pixels in 1st and last rows
+        pixels along the path - black pixels in 1st and last rows
         indicate start and end points)
     Shortest path to solve maze
     '''
