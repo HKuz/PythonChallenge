@@ -53,28 +53,22 @@ def main():
                     # Pixel isn't already in the path and it's not white
                     shortest[last_pixel] = next_pixel
                     path_queue.append(next_pixel)
-            # for nextNode in graph.childrenOf(lastNode):
-            #     if nextNode not in tmpPath:
-            #         newPath = tmpPath + [nextNode]
-            #         pathQueue.append(newPath)
 
         r_data = []
-        # all_data = []
+        all_data = []
         img = Image.new('RGB', (w, h), color=(255, 255, 255))
-        # draw = ImageDraw.Draw(img)
 
-        for pixel in shortest:
+        pixel = start
+        while pixel != end:
             r_data.append(maze.getpixel(pixel)[0])
-            # all_data.append(maze.getpixel(pixel))
+            pixel = shortest[pixel]
+            all_data.append(maze.getpixel(pixel))
             img.putpixel(pixel, maze.getpixel(pixel))
-        img.save('./maze_chall_24/path.jpg')
 
-        # draw.line(first)
-        # draw.line(second)
-        # del draw
+        img.save('./maze_chall_24/path_tmp.jpg')
 
-        # with open('./maze_chall_24/maze.zip', 'wb') as result:
-        #     result.write(bytes(data[1::2]))
+        with open('./maze_chall_24/maze.zip', 'wb') as result:
+            result.write(bytes(data[1::2]))
 
     return 0
 
