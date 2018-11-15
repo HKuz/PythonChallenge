@@ -20,4 +20,7 @@
 - Challenge 21: zlib, bz2
 - Challenge 22: PIL.Image, PIL.ImageDraw
 - Challenge 23: this
-- Challenge 24:
+- Challenge 24: PIL.Image
+- Challenge 25:
+
+
