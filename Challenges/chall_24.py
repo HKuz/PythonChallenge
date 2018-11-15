@@ -10,7 +10,7 @@ Uses Anaconda environment with Pillow for image processing
     - Run `source activate imgPIL`, `python chall_24.py`
 '''
 
-from PIL import Image
+from PIL import Image, ImageDraw
 
 
 def main():
@@ -58,11 +58,23 @@ def main():
             #         newPath = tmpPath + [nextNode]
             #         pathQueue.append(newPath)
 
-        data = []
-        for pixel in shortest:
-            data.append(maze.getpixel(pixel)[0])
+        r_data = []
+        # all_data = []
+        img = Image.new('RGB', (w, h), color=(255, 255, 255))
+        # draw = ImageDraw.Draw(img)
 
-        print(data)
+        for pixel in shortest:
+            r_data.append(maze.getpixel(pixel)[0])
+            # all_data.append(maze.getpixel(pixel))
+            img.putpixel(pixel, maze.getpixel(pixel))
+        img.save('./maze_chall_24/path.jpg')
+
+        # draw.line(first)
+        # draw.line(second)
+        # del draw
+
+        # with open('./maze_chall_24/maze.zip', 'wb') as result:
+        #     result.write(bytes(data[1::2]))
 
     return 0
 
