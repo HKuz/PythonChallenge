@@ -11,6 +11,7 @@ Uses Anaconda environment with Pillow for image processing
 '''
 
 import wave
+from PIL import Image
 
 
 def main():
@@ -27,15 +28,27 @@ def main():
 
     source_dir = './waves_chall_25/'
     wave_files = ['lake{}.wav'.format(i) for i in range(1, 26)]
+    w = 64  # Challenge image is 640x480
+    h = 48
 
-    # Look at wave file properties
+    # Look at wave file properties - all files are same
     with wave.open(source_dir + wave_files[0], 'rb') as tmp:
         print('Frames: {}'.format(tmp.getnframes()))  # 10800
         print('Channels: {}'.format(tmp.getnchannels()))  # 1
         print('Samp width: {}'.format(tmp.getsampwidth()))  # 1
         print('Frame rate: {}'.format(tmp.getframerate()))  # 9600
+        bytes_datum = tmp.readframes(tmp.getnframes())
+        tmpimg = Image.frombytes('RGB', (w, h), bytes_datum)
+        tmpimg.save('./waves_chall_25/test.jpg')
 
     # Convert each wave file to an image
+    # img = Image.new('RGB', (w * 5, h * 5), color=(255, 255, 255))
+
+    # for i, filename in enumerate(wave_files):
+    #     with wave.open(source_dir + filename, 'rb') as wavfile:
+    #         bytes_data = wavfile.readframes(wavfile.getnframes())
+    #         wave_img = Image.frombytes('RGB', (w, h), bytes_data)
+    #         img.paste(wave_img, ())
 
     return 0
 
