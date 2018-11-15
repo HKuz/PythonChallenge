@@ -62,9 +62,9 @@ def main():
             r_data.append(maze.getpixel(pixel)[0])
             img.putpixel(pixel, maze.getpixel(pixel))
 
-        img.save('./maze_chall_24/path_TMP.jpg')
+        img.save('./maze_chall_24/path.jpg')
 
-        with open('./maze_chall_24/maze_tmp.zip', 'wb') as result:
+        with open('./maze_chall_24/maze.zip', 'wb') as result:
             result.write(bytes(r_data[1::2]))
 
     return 0
