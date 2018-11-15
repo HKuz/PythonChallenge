@@ -1,13 +1,16 @@
-#!/usr/local/bin/python3
+#!/Applications/anaconda/envs/imgPIL/bin
 # Python Challenge - 25
 # http://www.pythonchallenge.com/pc/hex/lake.html
 # Username: butter; Password: fly
 # Keyword:
 
-import os
+'''
+Uses Anaconda environment with Pillow for image processing
+    - Python 3.7, numpy, and Pillow (PIL)
+    - Run `source activate imgPIL`, `python chall_25.py`
+'''
+
 import wave
-import matplotlib.pyplot as plt
-import numpy as np
 
 
 def main():
@@ -24,6 +27,16 @@ def main():
 
     source_dir = './waves_chall_25/'
     wave_files = ['lake{}.wav'.format(i) for i in range(1, 26)]
+
+    # Look at wave file properties
+    with wave.open(source_dir + wave_files[0], 'rb') as tmp:
+        print('Frames: {}'.format(tmp.getnframes()))  # 10800
+        print('Channels: {}'.format(tmp.getnchannels()))  # 1
+        print('Samp width: {}'.format(tmp.getsampwidth()))  # 1
+        print('Frame rate: {}'.format(tmp.getframerate()))  # 9600
+
+    # Convert each wave file to an image
+
     return 0
 
 
