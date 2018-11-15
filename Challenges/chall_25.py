@@ -2,7 +2,7 @@
 # Python Challenge - 25
 # http://www.pythonchallenge.com/pc/hex/lake.html
 # Username: butter; Password: fly
-# Keyword:
+# Keyword: decent
 
 '''
 Uses Anaconda environment with Pillow for image processing
@@ -26,13 +26,13 @@ def main():
         "http://www.pythonchallenge.com/pc/hex/lake[1-25].wav"
     '''
 
-    source_dir = './waves_chall_25/'
-    wave_files = ['lake{}.wav'.format(i) for i in range(1, 26)]
-    w = 64  # Challenge image is 640x480
-    h = 48
+    waves = ['./waves_chall_25/lake{}.wav'.format(i) for i in range(1, 26)]
+    w = 60  # Challenge image is 640x480, these values by trial and error
+    h = 60
 
     # Look at wave file properties - all files are same
-    with wave.open(source_dir + wave_files[0], 'rb') as tmp:
+    '''
+    with wave.open(wave_files[0], 'rb') as tmp:
         print('Frames: {}'.format(tmp.getnframes()))  # 10800
         print('Channels: {}'.format(tmp.getnchannels()))  # 1
         print('Samp width: {}'.format(tmp.getsampwidth()))  # 1
@@ -40,15 +40,18 @@ def main():
         bytes_datum = tmp.readframes(tmp.getnframes())
         tmpimg = Image.frombytes('RGB', (w, h), bytes_datum)
         tmpimg.save('./waves_chall_25/test.jpg')
+    '''
 
-    # Convert each wave file to an image
-    # img = Image.new('RGB', (w * 5, h * 5), color=(255, 255, 255))
+    # Convert each wave file to an image and combine into one
+    img = Image.new('RGB', (w * 5, h * 5), color=(255, 255, 255))
 
-    # for i, filename in enumerate(wave_files):
-    #     with wave.open(source_dir + filename, 'rb') as wavfile:
-    #         bytes_data = wavfile.readframes(wavfile.getnframes())
-    #         wave_img = Image.frombytes('RGB', (w, h), bytes_data)
-    #         img.paste(wave_img, ())
+    for i, filename in enumerate(waves):
+        with wave.open(filename, 'rb') as wavfile:
+            bytes_data = wavfile.readframes(wavfile.getnframes())
+            wave_img = Image.frombytes('RGB', (w, h), bytes_data)
+            img.paste(wave_img, ((i % 5) * w, (i // 5) * h))
+
+    img.save('./waves_chall_25/final.jpg')
 
     return 0
 
