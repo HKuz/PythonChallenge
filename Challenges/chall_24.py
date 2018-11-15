@@ -2,7 +2,7 @@
 # Python Challenge - 24
 # http://www.pythonchallenge.com/pc/hex/ambiguity.html
 # Username: butter; Password: fly
-# Keyword:
+# Keyword: lake, speed
 
 '''
 Uses Anaconda environment with Pillow for image processing
@@ -10,7 +10,7 @@ Uses Anaconda environment with Pillow for image processing
     - Run `source activate imgPIL`, `python chall_24.py`
 '''
 
-from PIL import Image, ImageDraw
+from PIL import Image
 
 
 def main():
@@ -36,39 +36,35 @@ def main():
         shortest = {}
         directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]  # (dw, dh)
         path_queue = [start]
-        print('Path queue (start): {}'.format(path_queue))
         while path_queue:
             # Get and remove oldest pixel in queue
             last_pixel = path_queue.pop(0)
-            # print('Last pixel: {}'.format(last_pixel))
             if last_pixel == end:
                 break
             for d in directions:
                 next_pixel = (last_pixel[0] + d[0], last_pixel[1] + d[1])
-                if not ((0 <= next_pixel[0] < w) and (0 <= next_pixel[1] < h)):
-                    # Off grid, check next direction
-                    continue
-                elif ((next_pixel not in shortest) and
-                      maze.getpixel(next_pixel) != (255, 255, 255, 255)):
+                if ((next_pixel not in shortest) and
+                    0 <= next_pixel[0] < w and 0 <= next_pixel[1] < h and
+                    maze.getpixel(next_pixel) != (255, 255, 255, 255)):
                     # Pixel isn't already in the path and it's not white
                     shortest[last_pixel] = next_pixel
                     path_queue.append(next_pixel)
 
         r_data = []
-        all_data = []
+        # all_data = []
         img = Image.new('RGB', (w, h), color=(255, 255, 255))
 
         pixel = start
         while pixel != end:
             r_data.append(maze.getpixel(pixel)[0])
-            pixel = shortest[pixel]
-            all_data.append(maze.getpixel(pixel))
             img.putpixel(pixel, maze.getpixel(pixel))
+            # all_data.append(maze.getpixel(pixel))
+            pixel = shortest[pixel]
 
-        img.save('./maze_chall_24/path_tmp.jpg')
+        # img.save('./maze_chall_24/path.jpg')
 
-        with open('./maze_chall_24/maze.zip', 'wb') as result:
-            result.write(bytes(data[1::2]))
+        with open('./maze_chall_24/maze_tmp.zip', 'wb') as result:
+            result.write(bytes(r_data[1::2]))
 
     return 0
 
