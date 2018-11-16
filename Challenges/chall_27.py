@@ -18,11 +18,11 @@ def main():
     Hint: between the tables, picture of rowboat on lake with zigzag drawn on
     did you say gif?
     oh, and this is NOT a repeat of 14 (spiral matrix)
+    http://www.pythonchallenge.com/pc/hex/zigzag.gif
     '''
-    w, h = 640, 480
-    img = Image.new('RGB', (w, h), color=(255, 255, 255))
+    img = Image.open('./zigzag_chall_27/zigzag.gif')
 
-    img.save('./zigzag_chall_27/final.jpg')
+    # img.save('./zigzag_chall_27/final.jpg')
 
     return 0
 
