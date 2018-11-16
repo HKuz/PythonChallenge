@@ -22,8 +22,7 @@ def main():
         pw = input('Email password:')
         textfile = './email_chall_26/msg.txt'
 
-        # Open a plain text file for reading.  For this example, assume that
-        # the text file contains only ASCII characters.
+        # Open a plain text file with message content to read
         with open(textfile) as fp:
             msg = EmailMessage()
             msg.set_content(fp.read())
@@ -32,18 +31,17 @@ def main():
         msg['From'] = hk
         msg['To'] = leo
 
-        # Send the message via our own SMTP server, but don't include the
-        # envelope header.
+        # Send the message via an SMTP server
         s = smtplib.SMTP('smtp.gmail.com', '587')
         s.ehlo()
         s.starttls()
         s.login(hk, pw)
-        # s.sendmail(hk, [leo], msg.as_string())
         s.send_message(msg)
         s.quit()
 
     # Response
     '''
+    ------------
     Never mind that.
 
     Have you found my broken zip?
@@ -51,6 +49,10 @@ def main():
     md5: bbb8b499a0eef99b52c7f13f4e78c24b
 
     Can you believe what one mistake can lead to?
+    ------------
+
+    Zip from challenge 25 had a broken zip in it, but opened okay
+    Picture of the word "speed"
     '''
 
     return 0
