@@ -6,6 +6,7 @@
 
 import smtplib
 from email.message import EmailMessage
+import hashlib
 
 
 def main():
@@ -51,10 +52,29 @@ def main():
     Can you believe what one mistake can lead to?
     ------------
 
+    MD5 algorithm: a hash function producing a 128-bit hash value. Although
+        MD5 was initially designed to be used as a cryptographic hash
+        function, it has been found to suffer from extensive vulnerabilities.
+        It can still be used as a checksum to verify data integrity, but only
+        against unintentional corruption (Wikipedia)
+
     Zip from challenge 25 had a broken zip in it, but opened okay
     Picture of the word "speed"
     '''
     md5 = 'bbb8b499a0eef99b52c7f13f4e78c24b'
+    found = False
+    with open('./maze_chall_24/maze/mybroken.zip', 'rb') as maze_zip:
+        broken = maze_zip.read()
+        for datum in range(len(broken)):
+            for byte in range(256):
+                fixed = broken[:datum] + bytes([byte]) + broken[datum + 1:]
+                if hashlib.md5(fixed).hexdigest() == md5:
+                    with open('./email_chall_26/fixed.zip', 'wb') as f:
+                        f.write(fixed)
+                        found = True
+                        break
+            if found:
+                break
 
     return 0
 
