@@ -54,6 +54,7 @@ def main():
     Zip from challenge 25 had a broken zip in it, but opened okay
     Picture of the word "speed"
     '''
+    md5 = 'bbb8b499a0eef99b52c7f13f4e78c24b'
 
     return 0
 
