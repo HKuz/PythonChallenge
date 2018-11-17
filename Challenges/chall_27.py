@@ -20,7 +20,11 @@ def main():
     oh, and this is NOT a repeat of 14 (spiral matrix)
     http://www.pythonchallenge.com/pc/hex/zigzag.gif
     '''
-    img = Image.open('./zigzag_chall_27/zigzag.gif')
+    with Image.open('./zigzag_chall_27/zigzag.gif') as img:
+        w, h = img.size  # (320, 270). Format: GIF; Mode: P (8-bit pixels)
+        # print(img.getextrema())  # Pixel range: 0-255
+        palette = img.getpalette()[::3]
+        print(palette)
 
     # img.save('./zigzag_chall_27/final.jpg')
 
