@@ -11,6 +11,7 @@ Uses Anaconda environment with Pillow for image processing
     - Run `source activate imgPIL`, `python chall_27.py`
 '''
 
+import bz2
 from PIL import Image
 
 
@@ -24,14 +25,21 @@ def main():
         w, h = img.size  # (320, 270). Format: GIF; Mode: P (8-bit pixels)
         # print(img.getextrema())  # Pixel range: 0-255
         palette = img.getpalette()[::3]
-        # print(palette)
         # Pallette to data
-        data = img.getdata()
-        for i in range(50):
-            p = data[i]
-            print('{}   {}'.format(p, palette[p]))
-
-    # img.save('./zigzag_chall_27/final.jpg')
+        data = img.getdata()  # Seq of flattened pixel values
+        oddballs = []
+        expected = -1
+        i_s = []
+        for i, p in enumerate(data):
+            if expected >= 0 and p != expected:
+                oddballs.append(p)
+                i_s.append(i)
+            expected = palette[p]
+        print(len(oddballs))
+        # new = Image.new('RGB', (w, h))
+        # new_data = [(0, 0, 0)] * len(data)
+        # new.putdata([(255, 0, 0)])
+        # new.save('./zigzag_chall_27/unexpected.jpg')
 
     return 0
 
