@@ -24,7 +24,12 @@ def main():
         w, h = img.size  # (320, 270). Format: GIF; Mode: P (8-bit pixels)
         # print(img.getextrema())  # Pixel range: 0-255
         palette = img.getpalette()[::3]
-        print(palette)
+        # print(palette)
+        # Pallette to data
+        data = img.getdata()
+        for i in range(50):
+            p = data[i]
+            print('{}   {}'.format(p, palette[p]))
 
     # img.save('./zigzag_chall_27/final.jpg')
 
