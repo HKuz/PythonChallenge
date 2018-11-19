@@ -35,11 +35,19 @@ def main():
                 oddballs.append(p)
                 i_s.append(i)
             expected = palette[p]
-        print(len(oddballs))
-        # new = Image.new('RGB', (w, h))
-        # new_data = [(0, 0, 0)] * len(data)
-        # new.putdata([(255, 0, 0)])
-        # new.save('./zigzag_chall_27/unexpected.jpg')
+
+        buzz_data = bz2.decompress(bytearray(oddballs))
+        print(buzz_data)
+
+        # Create image with oddball indices
+        '''
+        new = Image.new('RGB', (w, h))
+        new_data = [(0, 0, 0)] * len(data)
+        for i in i_s:
+            new_data[i] = (255, 0, 0)
+        new.putdata(new_data)
+        new.save('./zigzag_chall_27/unexpected.jpg')
+        '''
 
     return 0
 
