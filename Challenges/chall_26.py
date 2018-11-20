@@ -19,8 +19,8 @@ def main():
 
     if send_email:
         leo = 'leopold.moz@pythonchallenge.com'
-        hk = 'hkuzdev@gmail.com'
-        pw = input('Email password:')
+        hk = input('Email address: ')
+        pw = input('Email password: ')
         textfile = './email_chall_26/msg.txt'
 
         # Open a plain text file with message content to read
