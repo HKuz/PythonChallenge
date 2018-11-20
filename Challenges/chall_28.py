@@ -22,7 +22,11 @@ def main():
     '''
     with Image.open('./ring_chall_28/bell.png') as bell:
         w, h = bell.size  # (640, 480). Format: PNG; Mode: RGB
-        pass
+        # histo = bell.histogram()
+        # print(histo[256:513])
+        data = bell.getdata()
+        green = [g for r, g, b in data]  # 307200 pixels
+        print(len(green))
 
     return 0
 
