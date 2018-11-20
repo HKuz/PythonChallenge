@@ -14,7 +14,7 @@ def main():
     '''
     with open('./relax_chall_30/yankeedoodle.csv') as csvfile:
         nums = [n.strip() for n in csvfile.read().split(',')]
-        print(len(nums))  # 7367
+        total_nums = len(nums)  # 7367
 
     return 0
 
