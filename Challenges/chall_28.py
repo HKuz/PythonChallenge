@@ -20,8 +20,8 @@ def main():
     RING-RING-RING say it out loud
     yes! green!
     '''
-    with Image.open('./zigzag_chall_27/zigzag.gif') as img:
-        w, h = img.size  # (320, 270). Format: GIF; Mode: P (8-bit pixels)
+    with Image.open('./ring_chall_28/bell.png') as bell:
+        w, h = bell.size  # (640, 480). Format: PNG; Mode: RGB
         pass
 
     return 0
