@@ -3,7 +3,7 @@
 # http://www.pythonchallenge.com/pc/ring/bell.html
 # http://www.pythonchallenge.com/pc/ring/green.html
 # Username: repeat; Password: switch
-# Keyword:
+# Keyword: guido
 
 '''
 Uses Anaconda environment with Pillow for image processing
@@ -23,10 +23,17 @@ def main():
     with Image.open('./ring_chall_28/bell.png') as bell:
         w, h = bell.size  # (640, 480). Format: PNG; Mode: RGB
         # histo = bell.histogram()
-        # print(histo[256:513])
+        # print(histo[256:513])  # green pixels
         data = bell.getdata()
         green = [g for r, g, b in data]  # 307200 pixels
-        print(len(green))
+
+        # Get difference between green values next to each other
+        tmp = [abs(green[i] - green[i + 1]) for i in range(0, len(green), 2)]
+        # print(bytes(tmp).decode())
+        # Remove the *'s (42)
+        print(bytes(filter(lambda x: x != 42, tmp)).decode())
+
+        # whodunnit().split()[0] ?
 
     return 0
 
