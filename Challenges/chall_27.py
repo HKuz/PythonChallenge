@@ -3,7 +3,7 @@
 # http://www.pythonchallenge.com/pc/hex/speedboat.html
 # http://www.pythonchallenge.com/pc/hex/zigzag.gif
 # Username: butter; Password: fly
-# Keyword:
+# Keyword: ../ring/bell.html, repeat, switch
 
 '''
 Uses Anaconda environment with Pillow for image processing
@@ -12,6 +12,7 @@ Uses Anaconda environment with Pillow for image processing
 '''
 
 import bz2
+import keyword
 from PIL import Image
 
 
@@ -37,7 +38,7 @@ def main():
             expected = palette[p]
 
         buzz_data = bz2.decompress(bytearray(oddballs))
-        print(buzz_data)
+        # print(buzz_data)
 
         # Create image with oddball indices
         '''
@@ -48,6 +49,11 @@ def main():
         new.putdata(new_data)
         new.save('./zigzag_chall_27/unexpected.jpg')
         '''
+        not_kws = []
+        for word in (buzz_data.decode('utf-8')).split():
+            if word not in not_kws and not keyword.iskeyword(word):
+                not_kws.append(word)
+        # ['../ring/bell.html', 'repeat', 'exec', 'print', 'switch']
 
     return 0
 
