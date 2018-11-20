@@ -5,8 +5,6 @@
 # Username: repeat; Password: switch
 # Keyword:
 
-import csv
-
 
 def main():
     '''
@@ -14,6 +12,10 @@ def main():
     The picture is only meant to help you relax
     while you look at the csv file
     '''
+    with open('./relax_chall_30/yankeedoodle.csv') as csvfile:
+        nums = [n.strip() for n in csvfile.read().split(',')]
+        print(len(nums))  # 7367
+
     return 0
 
 
