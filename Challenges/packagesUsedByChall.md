@@ -21,6 +21,11 @@
 - Challenge 22: PIL.Image, PIL.ImageDraw
 - Challenge 23: this
 - Challenge 24: PIL.Image
-- Challenge 25:
+- Challenge 25: PIL.Image, wave
+- Challenge 26: email, hashlib
+- Challenge 27: PIL.Image, bz2, keyword
+- Challenge 28: PIL.Image
+- Challenge 29: urllib.request, bz2, base64
+- Challenge 30: csv
 
 
