@@ -2,10 +2,11 @@
 # Python Challenge - 29
 # http://www.pythonchallenge.com/pc/ring/guido.html
 # Username: repeat; Password: switch
-# Keyword:
+# Keyword: yankeedoodle
 
 import base64
 import urllib.request
+import bz2
 
 
 def main():
@@ -22,8 +23,11 @@ def main():
     response = urllib.request.urlopen(request)
     source = response.read().decode()
     index = source.find('</html>') + len('</html>\n')
-    silence = source[index:]
-    print(silence)
+    silence = source[index:].split('\n')
+    spaces = [len(s) for s in silence]
+    message = bz2.decompress(bytes(spaces)).decode()
+    print(message)
+    # Isn't it clear? I am yankeedoodle!
 
     return 0
 
