@@ -3,7 +3,7 @@
 # http://www.pythonchallenge.com/pc/ring/yankeedoodle.html
 # http://www.pythonchallenge.com/pc/ring/yankeedoodle.csv
 # Username: repeat; Password: switch
-# Keyword:
+# Keyword: grandpa
 
 '''
 Uses Anaconda environment with Pillow for image processing
@@ -31,7 +31,20 @@ def main():
         img = Image.new('P', (w, h))
         pixels = [int(float(n) * 256) for n in nums]
         img.putdata(pixels)
+        img = img.transpose(Image.FLIP_LEFT_RIGHT)
+        img = img.transpose(Image.ROTATE_90)
         img.save('./relax_chall_30/result.png')
+        # n = str(x[i])[5] + str(x[i+1])[5] + str(x[i+2])[6]
+
+        msg = [int(nums[i][5] + nums[i + 1][5] + nums[i + 2][6])
+               for i in range(0, len_n - 3, 3)]
+        print(bytes(msg).decode())
+
+        '''
+        So, you found the hidden message.
+        There is lots of room here for a long message, but we only need very
+        little space to say "look at grandpa", so the rest is just garbage.
+        '''
 
     return 0
 
