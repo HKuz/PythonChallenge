@@ -11,6 +11,10 @@ def main():
     Hint: where am I? Picture of rock near a beach
     short break, this ***REALLY*** has nothing to do with Python
     Login required: island: country
+    Next page:
+    UFO's ?
+    That was too easy. You are still on 31...
+    Window element with iterations attribute of 128
     '''
     return 0
 
