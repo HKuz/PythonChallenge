@@ -25,12 +25,11 @@ def main():
         len_n = len(nums)  # 7367
         # float_nums = [float(s) for s in nums]
         # print('Max: {}, Min: {}'.format(max(float_nums), min(float_nums)))
-        h, w = [n for n in range(2, int(len_n / 2) + 1) if
+        w, h = [n for n in range(2, int(len_n / 2) + 1) if
                 len_n % n == 0]  # [53, 139]
 
         img = Image.new('P', (w, h))
-        scale = 256
-        pixels = [int(float(n) * scale) for n in nums]
+        pixels = [int(float(n) * 256) for n in nums]
         img.putdata(pixels)
         img.save('./relax_chall_30/result.png')
 
