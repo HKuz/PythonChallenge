@@ -1,17 +1,9 @@
-#!/Applications/anaconda/envs/imgPIL/bin
+#!/usr/local/bin/python3
 # Python Challenge - 31
 # http://www.pythonchallenge.com/pc/ring/grandpa.html
-# http://www.pythonchallenge.com/pc/ring/yankeedoodle.csv
+# http://www.pythonchallenge.com/pc/rock/grandpa.html
 # Username: repeat; Password: switch
-# Keyword:
-
-'''
-Uses Anaconda environment with Pillow for image processing
-    - Python 3.7, numpy, and Pillow (PIL)
-    - Run `source activate imgPIL`, `python chall_31.py`
-'''
-
-from PIL import Image
+# Keyword: kohsamui, thailand;
 
 
 def main():
