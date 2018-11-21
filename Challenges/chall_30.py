@@ -1,9 +1,17 @@
-#!/usr/local/bin/python3
+#!/Applications/anaconda/envs/imgPIL/bin
 # Python Challenge - 30
 # http://www.pythonchallenge.com/pc/ring/yankeedoodle.html
 # http://www.pythonchallenge.com/pc/ring/yankeedoodle.csv
 # Username: repeat; Password: switch
 # Keyword:
+
+'''
+Uses Anaconda environment with Pillow for image processing
+    - Python 3.7, numpy, and Pillow (PIL)
+    - Run `source activate imgPIL`, `python chall_30.py`
+'''
+
+from PIL import Image
 
 
 def main():
@@ -14,7 +22,17 @@ def main():
     '''
     with open('./relax_chall_30/yankeedoodle.csv') as csvfile:
         nums = [n.strip() for n in csvfile.read().split(',')]
-        total_nums = len(nums)  # 7367
+        len_n = len(nums)  # 7367
+        # float_nums = [float(s) for s in nums]
+        # print('Max: {}, Min: {}'.format(max(float_nums), min(float_nums)))
+        h, w = [n for n in range(2, int(len_n / 2) + 1) if
+                len_n % n == 0]  # [53, 139]
+
+        img = Image.new('P', (w, h))
+        scale = 256
+        pixels = [int(float(n) * scale) for n in nums]
+        img.putdata(pixels)
+        img.save('./relax_chall_30/result.png')
 
     return 0
 
