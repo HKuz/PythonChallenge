@@ -5,6 +5,14 @@
 # Username: repeat; Password: switch
 # Keyword: kohsamui, thailand;
 
+'''
+Uses Anaconda environment with Pillow for image processing
+    - Python 3.7, numpy, and Pillow (PIL)
+    - Run `source activate imgPIL`, `python chall_31.py`
+'''
+
+from PIL import Image
+
 
 def main():
     '''
