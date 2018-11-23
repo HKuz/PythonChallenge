@@ -24,6 +24,14 @@ def main():
     That was too easy. You are still on 31...
     Window element with iterations attribute of 128
     '''
+    left = 0.34
+    top = 0.57
+    width = 0.036
+    height = 0.027
+    max_iter = 128
+
+    with Image.open('./mandelbrot_chall_31/mandelbrot.gif') as mandelbrot:
+        pass
     return 0
 
 
