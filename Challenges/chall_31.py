@@ -3,7 +3,7 @@
 # http://www.pythonchallenge.com/pc/ring/grandpa.html
 # http://www.pythonchallenge.com/pc/rock/grandpa.html
 # Username: repeat; Password: switch
-# Keyword: kohsamui, thailand;
+# Keyword: kohsamui, thailand; arecibo
 
 '''
 Uses Anaconda environment with Pillow for image processing
