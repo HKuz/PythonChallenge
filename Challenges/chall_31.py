@@ -18,7 +18,7 @@ def main():
     '''
     Hint: where am I? Picture of rock near a beach
     short break, this ***REALLY*** has nothing to do with Python
-    Login required: island: country
+    Login required: island: country -> search for Grandpa rock
     Next page:
     UFO's ?
     That was too easy. You are still on 31...
@@ -26,12 +26,18 @@ def main():
     '''
     left = 0.34
     top = 0.57
-    width = 0.036
-    height = 0.027
+    w_step = 0.036  # x-axis = reals
+    h_step = 0.027  # y-axis = imaginaries
     max_iter = 128
 
     with Image.open('./mandelbrot_chall_31/mandelbrot.gif') as mandelbrot:
-        pass
+        w, h = mandelbrot.size
+        print('W: {}, H: {}'.format(w, h))
+
+        # f_c(z) = z^2 + c for f_c(0), f_c(f_c(0)), etc.
+        for n_iter in range(max_iter):
+            pass
+
     return 0
 
 
