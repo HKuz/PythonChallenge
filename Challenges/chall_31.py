@@ -52,6 +52,19 @@ def main():
         new_mb.putdata(new_data)
         new_mb.save('./mandelbrot_chall_31/new_mandelbrot.gif')
 
+        # Find differences
+        changes = [(a - b)for a, b in zip(mb.getdata(), new_mb.getdata())
+                   if a != b]  # Length: 1679
+        print(changes)
+        factors = [n for n in range(2, int(len(changes) / 2) + 1) if
+                   len(changes) % n == 0]  # [23, 73]
+
+        # Create image from the differences
+        new_new_mb = Image.new('1', tuple(factors))
+        new_new_data = [1 if p >= 16 else 0 for p in changes]
+        new_new_mb.putdata(new_new_data)
+        new_new_mb.save('./mandelbrot_chall_31/message.gif')
+
     return 0
 
 
