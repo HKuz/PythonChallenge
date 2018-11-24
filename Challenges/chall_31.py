@@ -26,17 +26,31 @@ def main():
     '''
     left = 0.34
     top = 0.57
-    w_step = 0.036  # x-axis = reals
-    h_step = 0.027  # y-axis = imaginaries
+    width = 0.036  # x-axis = reals
+    height = 0.027  # y-axis = imaginaries
     max_iter = 128
 
-    with Image.open('./mandelbrot_chall_31/mandelbrot.gif') as mandelbrot:
-        w, h = mandelbrot.size
+    with Image.open('./mandelbrot_chall_31/mandelbrot_copy.gif') as mb:
+        w, h = mb.size
         print('W: {}, H: {}'.format(w, h))
+        r_step = width / w
+        i_step = height / h
+        new_data = []
 
-        # f_c(z) = z^2 + c for f_c(0), f_c(f_c(0)), etc.
-        for n_iter in range(max_iter):
-            pass
+        for y in range(h - 1, -1, -1):
+            for x in range(w):
+                c = complex(left + x * r_step, top + y * i_step)
+                z = complex(0, 0)
+                # f_c(z) = z^2 + c for f_c(0), f_c(f_c(0)), etc.
+                for n_iter in range(max_iter):
+                    z = z**2 + c
+                    if abs(z) > 2:
+                        break
+                new_data.append(n_iter)
+
+        new_mb = mb.copy()
+        new_mb.putdata(new_data)
+        new_mb.save('./mandelbrot_chall_31/new_mandelbrot.gif')
 
     return 0
 
