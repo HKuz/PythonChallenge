@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/Applications/anaconda/envs/imgPIL/bin
 # Python Challenge - 31
 # http://www.pythonchallenge.com/pc/ring/grandpa.html
 # http://www.pythonchallenge.com/pc/rock/grandpa.html
