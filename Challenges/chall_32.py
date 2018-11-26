@@ -4,14 +4,6 @@
 # Username: kohsamui; Password: thailand
 # Keyword:
 
-'''
-Uses Anaconda environment with Pillow for image processing
-    - Python 3.7, numpy, and Pillow (PIL)
-    - Run `source activate imgPIL`, `python chall_32.py`
-'''
-
-from PIL import Image
-
 
 def main():
     '''
