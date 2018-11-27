@@ -11,6 +11,7 @@ def main():
     fill in the blanks
     for warmup.txt
     '''
+    warmup = './etchasketch_chall_32/warmup.txt'
     return 0
 
 
