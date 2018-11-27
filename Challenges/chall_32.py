@@ -12,10 +12,13 @@ def main():
     '''
     Hint: etch-a-sketch
     fill in the blanks
-    for warmup.txt
+    for warmup.txt -> dimensions and parameters for a 9x9 challenge
+    Solve that, see arrow pointing up
+    up.html -> 32 x 32 challenge
     '''
     warmup_path = './etchasketch_chall_32/warmup.txt'
     EtchASketch(warmup_path)
+
     return 0
 
 
@@ -28,10 +31,11 @@ class EtchASketch(object):
         Finds a solution where tiles are filled and grouped per h and v params
     """
 
-    dim_x = 0
-    dim_y = 0
+    rows = 0
+    cols = 0
     horiz = []
     vert = []
+    board = [[None] * self.cols] * self.rows
 
     def __init__(self, path):
         self.path = path
@@ -55,7 +59,7 @@ class EtchASketch(object):
                 # Line isn't newline or comment (contains numbers)
                 nums = tuple([int(n) for n in line.split(' ')])
                 if d_flag:
-                    self.dim_x, self.dim_y = nums
+                    self.rows, self.cols = nums
 
                 elif h_flag:
                     self.horiz.append(nums)
@@ -70,6 +74,9 @@ class EtchASketch(object):
             print('Verticals:')
             for v in self.vert:
                 print(v)
+
+        def show_board(self):
+            pass
 
 
 if __name__ == '__main__':
