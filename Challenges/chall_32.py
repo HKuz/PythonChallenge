@@ -1,10 +1,11 @@
 #!/usr/local/bin/python3
 # Python Challenge - 32
 # http://www.pythonchallenge.com/pc/rock/arecibo.html
+# http://www.pythonchallenge.com/pc/rock/warmup.txt
+# http://www.pythonchallenge.com/pc/rock/up.html
+# http://www.pythonchallenge.com/pc/rock/up.txt
 # Username: kohsamui; Password: thailand
-# Keyword:
-
-import re
+# Keyword: up,
 
 
 def main():
@@ -51,19 +52,22 @@ class EtchASketch(object):
                     d_flag, h_flag, v_flag = False, False, True
                     continue
 
+                # Line isn't newline or comment (contains numbers)
+                nums = tuple([int(n) for n in line.split(' ')])
                 if d_flag:
-                    pass
+                    self.dim_x, self.dim_y = nums
 
                 elif h_flag:
-                    pass
+                    self.horiz.append(nums)
 
                 elif v_flag:
-                    pass
+                    self.vert.append(nums)
 
             print('Dimensions: {} x {}'.format(self.dim_x, self.dim_y))
             print('Horizontals:')
             for h in self.horiz:
                 print(h)
+            print('Verticals:')
             for v in self.vert:
                 print(v)
 
