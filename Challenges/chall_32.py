@@ -35,7 +35,7 @@ class EtchASketch(object):
     cols = 0
     horiz = []
     vert = []
-    board = [[None] * self.cols] * self.rows
+    board = []
 
     def __init__(self, path):
         self.path = path
@@ -60,6 +60,7 @@ class EtchASketch(object):
                 nums = tuple([int(n) for n in line.split(' ')])
                 if d_flag:
                     self.rows, self.cols = nums
+                    self.board = [[None] * self.cols] * self.rows
 
                 elif h_flag:
                     self.horiz.append(nums)
@@ -67,16 +68,20 @@ class EtchASketch(object):
                 elif v_flag:
                     self.vert.append(nums)
 
-            print('Dimensions: {} x {}'.format(self.dim_x, self.dim_y))
-            print('Horizontals:')
-            for h in self.horiz:
-                print(h)
-            print('Verticals:')
-            for v in self.vert:
-                print(v)
+            # print('Dimensions: {} x {}'.format(self.dim_x, self.dim_y))
+            # print('Horizontals:')
+            # for h in self.horiz:
+            #     print(h)
+            # print('Verticals:')
+            # for v in self.vert:
+            #     print(v)
+            self.show_board()
 
-        def show_board(self):
-            pass
+    def show_board(self):
+        mapping = {0: ' ', 1: 'X', None: '?'}
+        for r in self.board:
+            s = ''.join([mapping[item] for item in r])
+            print(s)
 
 
 if __name__ == '__main__':
