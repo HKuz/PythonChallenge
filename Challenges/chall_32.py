@@ -83,6 +83,9 @@ class EtchASketch(object):
             s = ''.join([mapping[item] for item in r])
             print(s)
 
+    def seg_perms(self, seg):
+        pass
+
 
 if __name__ == '__main__':
     main()
