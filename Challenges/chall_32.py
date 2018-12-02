@@ -86,6 +86,9 @@ class EtchASketch(object):
     def seg_perms(self, seg):
         pass
 
+    def check_board(self, board):
+        pass
+
 
 if __name__ == '__main__':
     main()
