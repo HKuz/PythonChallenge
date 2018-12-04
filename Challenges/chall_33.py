@@ -23,11 +23,12 @@ def main():
         Then from the ashes, fair and square,
         another truth at you will glare.
     Image is beer1.jpg -> beer2.jpg says "no, png"
-    New page is X on black and white
+    New page has greyscale image
     '''
     path = './light_chall_33/beer2.png'
     with Image.open(path) as beer:
         w, h = beer.size  # 138, 138; mode: L; format: PNG
+        mode = beer.mode
         histo = beer.histogram()
         # print(histo)
 
@@ -38,7 +39,7 @@ def main():
 
         # Remove the brightest of these -> so 324 pixels at value 152
         pix_val, count = squares[-1]
-        next_img = Image.new('L', (w, h))
+        next_img = Image.new(mode, (w, h))
         new_pixels = [p if p != pix_val else 0 for p in beer.getdata()]
         next_img.putdata(new_pixels)
         next_img.save('./light_chall_33/next_img.png')
