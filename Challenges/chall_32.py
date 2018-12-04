@@ -5,7 +5,7 @@
 # http://www.pythonchallenge.com/pc/rock/up.html
 # http://www.pythonchallenge.com/pc/rock/up.txt
 # Username: kohsamui; Password: thailand
-# Keyword: up,
+# Keyword: up, python, beer
 
 
 def main():
