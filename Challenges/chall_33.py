@@ -3,7 +3,7 @@
 # http://www.pythonchallenge.com/pc/rock/beer.html
 # http://www.pythonchallenge.com/pc/rock/beer2.png
 # Username: kohsamui; Password: thailand
-# Keyword:
+# Keyword: gremlins
 
 '''
 Uses Anaconda environment with Pillow for image processing
@@ -12,6 +12,7 @@ Uses Anaconda environment with Pillow for image processing
 '''
 
 import math
+import numpy as np
 from PIL import Image
 
 
@@ -29,20 +30,28 @@ def main():
     with Image.open(path) as beer:
         w, h = beer.size  # 138, 138; mode: L; format: PNG
         mode = beer.mode
-        histo = beer.histogram()
-        # print(histo)
+        histo = np.array([(pix, count) for pix, count in
+                          enumerate(beer.histogram()) if count != 0])
+        # print(histo)  # Length is 66, pixels come in consecutive pairs
 
-        # Find pixel value for perfect squares in histogram pixel counts
-        squares = [(i, n) for i, n in enumerate(histo) if
-                   math.sqrt(n).is_integer() and n > 0]
-        # [(25, 144), (50, 225), (152, 324)]
+        # Find where pixel counts still make a square -> every other index
+        # sqrts = [np.sqrt(p) for p in np.cumsum(histo[:, 1])]
+        # print(sqrts)
 
-        # Remove the brightest of these -> so 324 pixels at value 152
-        pix_val, count = squares[-1]
-        next_img = Image.new(mode, (w, h))
-        new_pixels = [p if p != pix_val else 0 for p in beer.getdata()]
-        next_img.putdata(new_pixels)
-        next_img.save('./light_chall_33/next_img.png')
+        data = list(beer.getdata())
+        for i in range(len(histo) - 2, 0, -2):
+            # Start at index 64, jump back by 2's, remove 2 brightest pixels,
+            #   reshape image, save as new image
+            data = [x for x in data if x < histo[i][0]]
+            side = int(math.sqrt(len(data)))
+            next_img = Image.new(mode, (side, side))
+            next_img.putdata(data)
+            next_img.save('./light_chall_33/res_{}.png'
+                          .format(int((64 - i) / 2)))
+
+        # Result:
+        # xxxxxxxxxxxvrnegarwinemoldinosl_
+        # 'Squared' letters: gremlins
 
     return 0
 
