@@ -38,10 +38,8 @@ def main():
 
         # Remove the brightest of these -> so 324 pixels at value 152
         pix_val, count = squares[-1]
-        count = int(math.sqrt(count))
-        new_w, new_h = w - count, h - count
-        next_img = Image.new('L', (new_w, new_h))
-        new_pixels = list(filter(lambda p: p != pix_val, beer.getdata()))
+        next_img = Image.new('L', (w, h))
+        new_pixels = [p if p != pix_val else 0 for p in beer.getdata()]
         next_img.putdata(new_pixels)
         next_img.save('./light_chall_33/next_img.png')
 
