@@ -30,10 +30,20 @@ def main():
         w, h = beer.size  # 138, 138; mode: L; format: PNG
         histo = beer.histogram()
         # print(histo)
+
         # Find pixel value for perfect squares in histogram pixel counts
-        squares = [i for i, n in enumerate(histo) if
+        squares = [(i, n) for i, n in enumerate(histo) if
                    math.sqrt(n).is_integer() and n > 0]
-        print(squares)
+        # [(25, 144), (50, 225), (152, 324)]
+
+        # Remove the brightest of these -> so 324 pixels at value 152
+        pix_val, count = squares[-1]
+        count = int(math.sqrt(count))
+        new_w, new_h = w - count, h - count
+        next_img = Image.new('L', (new_w, new_h))
+        new_pixels = list(filter(lambda p: p != pix_val, beer.getdata()))
+        next_img.putdata(new_pixels)
+        next_img.save('./light_chall_33/next_img.png')
 
     return 0
 
